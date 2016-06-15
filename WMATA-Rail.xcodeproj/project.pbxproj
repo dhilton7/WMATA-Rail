@@ -15,9 +15,10 @@
 		9BC2DAF41D11DA6D00D8DEF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DAF31D11DA6D00D8DEF0 /* Constants.swift */; };
 		9BC2DAF61D11DB2300D8DEF0 /* Rail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DAF51D11DB2300D8DEF0 /* Rail.swift */; };
 		9BC2DAF91D11DD3A00D8DEF0 /* LinesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DAF81D11DD3A00D8DEF0 /* LinesTableViewController.swift */; };
-		9BC2DB061D11E0FC00D8DEF0 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DB051D11E0FC00D8DEF0 /* WMATASwift.framework */; };
-		9BC2DB071D11E0FF00D8DEF0 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DB051D11E0FC00D8DEF0 /* WMATASwift.framework */; };
-		9BC2DB081D11E0FF00D8DEF0 /* WMATASwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DB051D11E0FC00D8DEF0 /* WMATASwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9BC2DB101D11E58200D8DEF0 /* StopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DB0F1D11E58200D8DEF0 /* StopsTableViewController.swift */; };
+		9BC2DB121D11E97100D8DEF0 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DB111D11E97100D8DEF0 /* WMATASwift.framework */; };
+		9BC2DB131D11E97500D8DEF0 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DB111D11E97100D8DEF0 /* WMATASwift.framework */; };
+		9BC2DB141D11E97500D8DEF0 /* WMATASwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DB111D11E97100D8DEF0 /* WMATASwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9BC2DB081D11E0FF00D8DEF0 /* WMATASwift.framework in Embed Frameworks */,
+				9BC2DB141D11E97500D8DEF0 /* WMATASwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,7 +58,8 @@
 		9BC2DAF31D11DA6D00D8DEF0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9BC2DAF51D11DB2300D8DEF0 /* Rail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rail.swift; sourceTree = "<group>"; };
 		9BC2DAF81D11DD3A00D8DEF0 /* LinesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesTableViewController.swift; sourceTree = "<group>"; };
-		9BC2DB051D11E0FC00D8DEF0 /* WMATASwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMATASwift.framework; sourceTree = "<group>"; };
+		9BC2DB0F1D11E58200D8DEF0 /* StopsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsTableViewController.swift; sourceTree = "<group>"; };
+		9BC2DB111D11E97100D8DEF0 /* WMATASwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMATASwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BC2DB061D11E0FC00D8DEF0 /* WMATASwift.framework in Frameworks */,
-				9BC2DB071D11E0FF00D8DEF0 /* WMATASwift.framework in Frameworks */,
+				9BC2DB121D11E97100D8DEF0 /* WMATASwift.framework in Frameworks */,
+				9BC2DB131D11E97500D8DEF0 /* WMATASwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +88,7 @@
 				9BA393441D11D63200AE3ED9 /* WMATA-Rail */,
 				9BA393591D11D63200AE3ED9 /* WMATA-RailTests */,
 				9BA393431D11D63200AE3ED9 /* Products */,
-				9BC2DB051D11E0FC00D8DEF0 /* WMATASwift.framework */,
+				9BC2DB111D11E97100D8DEF0 /* WMATASwift.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +112,7 @@
 				9BC2DAF31D11DA6D00D8DEF0 /* Constants.swift */,
 				9BC2DAF51D11DB2300D8DEF0 /* Rail.swift */,
 				9BC2DAF81D11DD3A00D8DEF0 /* LinesTableViewController.swift */,
+				9BC2DB0F1D11E58200D8DEF0 /* StopsTableViewController.swift */,
 			);
 			path = "WMATA-Rail";
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BC2DB101D11E58200D8DEF0 /* StopsTableViewController.swift in Sources */,
 				9BC2DAF61D11DB2300D8DEF0 /* Rail.swift in Sources */,
 				9BA393461D11D63200AE3ED9 /* AppDelegate.swift in Sources */,
 				9BC2DAF41D11DA6D00D8DEF0 /* Constants.swift in Sources */,

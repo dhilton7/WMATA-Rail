@@ -15,15 +15,8 @@ class LinesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.getLines()
-        
     }
 
     private func getLines() {
@@ -55,14 +48,13 @@ class LinesTableViewController: UITableViewController {
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let controller = segue.destinationViewController as? StopsTableViewController {
+            controller.lineCode = lines![tableView.indexPathForSelectedRow!.row].lineCode
+        }
     }
-    */
 
 }

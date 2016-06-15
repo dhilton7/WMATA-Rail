@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Metro Lines-->
         <scene sceneID="vfz-mN-6nf">
             <objects>
                 <tableViewController id="gDx-IQ-NRy" customClass="LinesTableViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,6 +21,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="iFA-7y-APd" kind="show" id="RYK-ez-Ibs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -28,11 +31,40 @@
                             <outlet property="delegate" destination="gDx-IQ-NRy" id="7G6-Da-UVk"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="RYs-sX-0mR"/>
+                    <navigationItem key="navigationItem" title="Metro Lines" id="SJ4-Tc-RuG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUx-nZ-xcx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1444" y="1063"/>
+        </scene>
+        <!--Stops-->
+        <scene sceneID="b4Q-Hb-oqD">
+            <objects>
+                <tableViewController id="iFA-7y-APd" customClass="StopsTableViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9ho-s8-hCM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopCell" id="AzV-YA-VBT">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AzV-YA-VBT" id="zDl-dn-3qo">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iFA-7y-APd" id="7I1-NN-wZ8"/>
+                            <outlet property="delegate" destination="iFA-7y-APd" id="1Sj-Fu-5aN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stops" id="lp7-6a-3fp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uvm-pY-cHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2124" y="1063"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P4z-NT-MXq">
