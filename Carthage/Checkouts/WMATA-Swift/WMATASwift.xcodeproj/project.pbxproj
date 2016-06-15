@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9B12001F1D11C3DB003E6899 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B12001E1D11C3DB003E6899 /* Alamofire.framework */; };
+		9B1200221D11C400003E6899 /* WMATASwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1200211D11C400003E6899 /* WMATASwift.swift */; };
+		9B1200261D11C836003E6899 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1200251D11C836003E6899 /* SwiftyJSON.framework */; };
+		9B1200281D11CA24003E6899 /* WMATARail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1200271D11CA24003E6899 /* WMATARail.swift */; };
+		9B1200291D11CB62003E6899 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1200251D11C836003E6899 /* SwiftyJSON.framework */; };
+		9B12002C1D11CDE3003E6899 /* SwiftyJSON.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9B12002B1D11CDE3003E6899 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9B3A11D71D11C2C2002BF083 /* WMATASwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B3A11D61D11C2C2002BF083 /* WMATASwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B3A11DE1D11C2C2002BF083 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B3A11D31D11C2C2002BF083 /* WMATASwift.framework */; };
+		9B3A11E31D11C2C2002BF083 /* WMATASwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3A11E21D11C2C2002BF083 /* WMATASwiftTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9B3A11DF1D11C2C2002BF083 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9B3A11CA1D11C2C2002BF083 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B3A11D21D11C2C2002BF083;
+			remoteInfo = WMATASwift;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9B12002A1D11CDC1003E6899 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9B12002C1D11CDE3003E6899 /* SwiftyJSON.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9B12001E1D11C3DB003E6899 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		9B1200211D11C400003E6899 /* WMATASwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMATASwift.swift; sourceTree = "<group>"; };
+		9B1200251D11C836003E6899 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		9B1200271D11CA24003E6899 /* WMATARail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMATARail.swift; sourceTree = "<group>"; };
+		9B12002B1D11CDE3003E6899 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		9B3A11D31D11C2C2002BF083 /* WMATASwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WMATASwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B3A11D61D11C2C2002BF083 /* WMATASwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMATASwift.h; sourceTree = "<group>"; };
+		9B3A11D81D11C2C2002BF083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B3A11DD1D11C2C2002BF083 /* WMATASwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WMATASwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B3A11E21D11C2C2002BF083 /* WMATASwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMATASwiftTests.swift; sourceTree = "<group>"; };
+		9B3A11E41D11C2C2002BF083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9B3A11CF1D11C2C2002BF083 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1200261D11C836003E6899 /* SwiftyJSON.framework in Frameworks */,
+				9B12001F1D11C3DB003E6899 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B3A11DA1D11C2C2002BF083 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1200291D11CB62003E6899 /* SwiftyJSON.framework in Frameworks */,
+				9B3A11DE1D11C2C2002BF083 /* WMATASwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9B3A11C91D11C2C2002BF083 = {
+			isa = PBXGroup;
+			children = (
+				9B12002B1D11CDE3003E6899 /* SwiftyJSON.framework */,
+				9B1200251D11C836003E6899 /* SwiftyJSON.framework */,
+				9B12001E1D11C3DB003E6899 /* Alamofire.framework */,
+				9B3A11D51D11C2C2002BF083 /* WMATASwift */,
+				9B3A11E11D11C2C2002BF083 /* WMATASwiftTests */,
+				9B3A11D41D11C2C2002BF083 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9B3A11D41D11C2C2002BF083 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9B3A11D31D11C2C2002BF083 /* WMATASwift.framework */,
+				9B3A11DD1D11C2C2002BF083 /* WMATASwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B3A11D51D11C2C2002BF083 /* WMATASwift */ = {
+			isa = PBXGroup;
+			children = (
+				9B3A11D61D11C2C2002BF083 /* WMATASwift.h */,
+				9B3A11D81D11C2C2002BF083 /* Info.plist */,
+				9B1200211D11C400003E6899 /* WMATASwift.swift */,
+				9B1200271D11CA24003E6899 /* WMATARail.swift */,
+			);
+			path = WMATASwift;
+			sourceTree = "<group>";
+		};
+		9B3A11E11D11C2C2002BF083 /* WMATASwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B3A11E21D11C2C2002BF083 /* WMATASwiftTests.swift */,
+				9B3A11E41D11C2C2002BF083 /* Info.plist */,
+			);
+			path = WMATASwiftTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9B3A11D01D11C2C2002BF083 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B3A11D71D11C2C2002BF083 /* WMATASwift.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		9B3A11D21D11C2C2002BF083 /* WMATASwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B3A11E71D11C2C2002BF083 /* Build configuration list for PBXNativeTarget "WMATASwift" */;
+			buildPhases = (
+				9B3A11CE1D11C2C2002BF083 /* Sources */,
+				9B3A11CF1D11C2C2002BF083 /* Frameworks */,
+				9B3A11D01D11C2C2002BF083 /* Headers */,
+				9B3A11D11D11C2C2002BF083 /* Resources */,
+				9B1200201D11C3E0003E6899 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WMATASwift;
+			productName = WMATASwift;
+			productReference = 9B3A11D31D11C2C2002BF083 /* WMATASwift.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9B3A11DC1D11C2C2002BF083 /* WMATASwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B3A11EA1D11C2C2002BF083 /* Build configuration list for PBXNativeTarget "WMATASwiftTests" */;
+			buildPhases = (
+				9B3A11D91D11C2C2002BF083 /* Sources */,
+				9B3A11DA1D11C2C2002BF083 /* Frameworks */,
+				9B3A11DB1D11C2C2002BF083 /* Resources */,
+				9B12002A1D11CDC1003E6899 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B3A11E01D11C2C2002BF083 /* PBXTargetDependency */,
+			);
+			name = WMATASwiftTests;
+			productName = WMATASwiftTests;
+			productReference = 9B3A11DD1D11C2C2002BF083 /* WMATASwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9B3A11CA1D11C2C2002BF083 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dan Hilton";
+				TargetAttributes = {
+					9B3A11D21D11C2C2002BF083 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					9B3A11DC1D11C2C2002BF083 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 9B3A11CD1D11C2C2002BF083 /* Build configuration list for PBXProject "WMATASwift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9B3A11C91D11C2C2002BF083;
+			productRefGroup = 9B3A11D41D11C2C2002BF083 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9B3A11D21D11C2C2002BF083 /* WMATASwift */,
+				9B3A11DC1D11C2C2002BF083 /* WMATASwiftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9B3A11D11D11C2C2002BF083 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B3A11DB1D11C2C2002BF083 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9B1200201D11C3E0003E6899 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9B3A11CE1D11C2C2002BF083 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B1200281D11CA24003E6899 /* WMATARail.swift in Sources */,
+				9B1200221D11C400003E6899 /* WMATASwift.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B3A11D91D11C2C2002BF083 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B3A11E31D11C2C2002BF083 /* WMATASwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B3A11E01D11C2C2002BF083 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B3A11D21D11C2C2002BF083 /* WMATASwift */;
+			targetProxy = 9B3A11DF1D11C2C2002BF083 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9B3A11E51D11C2C2002BF083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9B3A11E61D11C2C2002BF083 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9B3A11E81D11C2C2002BF083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = WMATASwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hilton.WMATASwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9B3A11E91D11C2C2002BF083 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = WMATASwift/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hilton.WMATASwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9B3A11EB1D11C2C2002BF083 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = WMATASwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hilton.WMATASwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9B3A11EC1D11C2C2002BF083 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = WMATASwiftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Hilton.WMATASwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9B3A11CD1D11C2C2002BF083 /* Build configuration list for PBXProject "WMATASwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B3A11E51D11C2C2002BF083 /* Debug */,
+				9B3A11E61D11C2C2002BF083 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B3A11E71D11C2C2002BF083 /* Build configuration list for PBXNativeTarget "WMATASwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B3A11E81D11C2C2002BF083 /* Debug */,
+				9B3A11E91D11C2C2002BF083 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B3A11EA1D11C2C2002BF083 /* Build configuration list for PBXNativeTarget "WMATASwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B3A11EB1D11C2C2002BF083 /* Debug */,
+				9B3A11EC1D11C2C2002BF083 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9B3A11CA1D11C2C2002BF083 /* Project object */;
+}

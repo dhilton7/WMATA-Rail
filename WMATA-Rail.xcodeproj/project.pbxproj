@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BA393461D11D63200AE3ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA393451D11D63200AE3ED9 /* AppDelegate.swift */; };
+		9BA3934B1D11D63200AE3ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA393491D11D63200AE3ED9 /* Main.storyboard */; };
+		9BA3934D1D11D63200AE3ED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3934C1D11D63200AE3ED9 /* Assets.xcassets */; };
+		9BA393501D11D63200AE3ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3934E1D11D63200AE3ED9 /* LaunchScreen.storyboard */; };
+		9BA3935B1D11D63200AE3ED9 /* WMATA_RailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA3935A1D11D63200AE3ED9 /* WMATA_RailTests.swift */; };
+		9BC2DAF01D11D9EB00D8DEF0 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DAEF1D11D9EB00D8DEF0 /* WMATASwift.framework */; };
+		9BC2DAF11D11D9F200D8DEF0 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DAEF1D11D9EB00D8DEF0 /* WMATASwift.framework */; };
+		9BC2DAF21D11D9F200D8DEF0 /* WMATASwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BC2DAEF1D11D9EB00D8DEF0 /* WMATASwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9BC2DAF41D11DA6D00D8DEF0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DAF31D11DA6D00D8DEF0 /* Constants.swift */; };
+		9BC2DAF61D11DB2300D8DEF0 /* Rail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DAF51D11DB2300D8DEF0 /* Rail.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BA393571D11D63200AE3ED9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BA3933A1D11D63100AE3ED9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BA393411D11D63200AE3ED9;
+			remoteInfo = "WMATA-Rail";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9BC2DAEE1D11D93600D8DEF0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9BC2DAF21D11D9F200D8DEF0 /* WMATASwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9BA393421D11D63200AE3ED9 /* WMATA-Rail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WMATA-Rail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BA393451D11D63200AE3ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BA3934A1D11D63200AE3ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BA3934C1D11D63200AE3ED9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BA3934F1D11D63200AE3ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BA393511D11D63200AE3ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BA393561D11D63200AE3ED9 /* WMATA-RailTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WMATA-RailTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BA3935A1D11D63200AE3ED9 /* WMATA_RailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMATA_RailTests.swift; sourceTree = "<group>"; };
+		9BA3935C1D11D63200AE3ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BC2DAEF1D11D9EB00D8DEF0 /* WMATASwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMATASwift.framework; sourceTree = "<group>"; };
+		9BC2DAF31D11DA6D00D8DEF0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9BC2DAF51D11DB2300D8DEF0 /* Rail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rail.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BA3933F1D11D63200AE3ED9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BC2DAF01D11D9EB00D8DEF0 /* WMATASwift.framework in Frameworks */,
+				9BC2DAF11D11D9F200D8DEF0 /* WMATASwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BA393531D11D63200AE3ED9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BA393391D11D63100AE3ED9 = {
+			isa = PBXGroup;
+			children = (
+				9BA393441D11D63200AE3ED9 /* WMATA-Rail */,
+				9BA393591D11D63200AE3ED9 /* WMATA-RailTests */,
+				9BA393431D11D63200AE3ED9 /* Products */,
+				9BC2DAEF1D11D9EB00D8DEF0 /* WMATASwift.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		9BA393431D11D63200AE3ED9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BA393421D11D63200AE3ED9 /* WMATA-Rail.app */,
+				9BA393561D11D63200AE3ED9 /* WMATA-RailTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BA393441D11D63200AE3ED9 /* WMATA-Rail */ = {
+			isa = PBXGroup;
+			children = (
+				9BA393451D11D63200AE3ED9 /* AppDelegate.swift */,
+				9BA393491D11D63200AE3ED9 /* Main.storyboard */,
+				9BA3934C1D11D63200AE3ED9 /* Assets.xcassets */,
+				9BA3934E1D11D63200AE3ED9 /* LaunchScreen.storyboard */,
+				9BA393511D11D63200AE3ED9 /* Info.plist */,
+				9BC2DAF31D11DA6D00D8DEF0 /* Constants.swift */,
+				9BC2DAF51D11DB2300D8DEF0 /* Rail.swift */,
+			);
+			path = "WMATA-Rail";
+			sourceTree = "<group>";
+		};
+		9BA393591D11D63200AE3ED9 /* WMATA-RailTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BA3935A1D11D63200AE3ED9 /* WMATA_RailTests.swift */,
+				9BA3935C1D11D63200AE3ED9 /* Info.plist */,
+			);
+			path = "WMATA-RailTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BA393411D11D63200AE3ED9 /* WMATA-Rail */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BA3935F1D11D63200AE3ED9 /* Build configuration list for PBXNativeTarget "WMATA-Rail" */;
+			buildPhases = (
+				9BA3933E1D11D63200AE3ED9 /* Sources */,
+				9BA3933F1D11D63200AE3ED9 /* Frameworks */,
+				9BA393401D11D63200AE3ED9 /* Resources */,
+				9BC2DAEE1D11D93600D8DEF0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WMATA-Rail";
+			productName = "WMATA-Rail";
+			productReference = 9BA393421D11D63200AE3ED9 /* WMATA-Rail.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9BA393551D11D63200AE3ED9 /* WMATA-RailTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BA393621D11D63200AE3ED9 /* Build configuration list for PBXNativeTarget "WMATA-RailTests" */;
+			buildPhases = (
+				9BA393521D11D63200AE3ED9 /* Sources */,
+				9BA393531D11D63200AE3ED9 /* Frameworks */,
+				9BA393541D11D63200AE3ED9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BA393581D11D63200AE3ED9 /* PBXTargetDependency */,
+			);
+			name = "WMATA-RailTests";
+			productName = "WMATA-RailTests";
+			productReference = 9BA393561D11D63200AE3ED9 /* WMATA-RailTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BA3933A1D11D63100AE3ED9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Dan Hilton";
+				TargetAttributes = {
+					9BA393411D11D63200AE3ED9 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					9BA393551D11D63200AE3ED9 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 9BA393411D11D63200AE3ED9;
+					};
+				};
+			};
+			buildConfigurationList = 9BA3933D1D11D63100AE3ED9 /* Build configuration list for PBXProject "WMATA-Rail" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BA393391D11D63100AE3ED9;
+			productRefGroup = 9BA393431D11D63200AE3ED9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BA393411D11D63200AE3ED9 /* WMATA-Rail */,
+				9BA393551D11D63200AE3ED9 /* WMATA-RailTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BA393401D11D63200AE3ED9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BA393501D11D63200AE3ED9 /* LaunchScreen.storyboard in Resources */,
+				9BA3934D1D11D63200AE3ED9 /* Assets.xcassets in Resources */,
+				9BA3934B1D11D63200AE3ED9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BA393541D11D63200AE3ED9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BA3933E1D11D63200AE3ED9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BC2DAF61D11DB2300D8DEF0 /* Rail.swift in Sources */,
+				9BA393461D11D63200AE3ED9 /* AppDelegate.swift in Sources */,
+				9BC2DAF41D11DA6D00D8DEF0 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BA393521D11D63200AE3ED9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BA3935B1D11D63200AE3ED9 /* WMATA_RailTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BA393581D11D63200AE3ED9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BA393411D11D63200AE3ED9 /* WMATA-Rail */;
+			targetProxy = 9BA393571D11D63200AE3ED9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9BA393491D11D63200AE3ED9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BA3934A1D11D63200AE3ED9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9BA3934E1D11D63200AE3ED9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BA3934F1D11D63200AE3ED9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BA3935D1D11D63200AE3ED9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BA3935E1D11D63200AE3ED9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BA393601D11D63200AE3ED9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "WMATA-Rail/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Hilton.WMATA-Rail";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9BA393611D11D63200AE3ED9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "WMATA-Rail/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Hilton.WMATA-Rail";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9BA393631D11D63200AE3ED9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "WMATA-RailTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Hilton.WMATA-RailTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WMATA-Rail.app/WMATA-Rail";
+			};
+			name = Debug;
+		};
+		9BA393641D11D63200AE3ED9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "WMATA-RailTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Hilton.WMATA-RailTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WMATA-Rail.app/WMATA-Rail";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BA3933D1D11D63100AE3ED9 /* Build configuration list for PBXProject "WMATA-Rail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BA3935D1D11D63200AE3ED9 /* Debug */,
+				9BA3935E1D11D63200AE3ED9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BA3935F1D11D63200AE3ED9 /* Build configuration list for PBXNativeTarget "WMATA-Rail" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BA393601D11D63200AE3ED9 /* Debug */,
+				9BA393611D11D63200AE3ED9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BA393621D11D63200AE3ED9 /* Build configuration list for PBXNativeTarget "WMATA-RailTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BA393631D11D63200AE3ED9 /* Debug */,
+				9BA393641D11D63200AE3ED9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9BA3933A1D11D63100AE3ED9 /* Project object */;
+}

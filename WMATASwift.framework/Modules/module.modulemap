@@ -1,0 +1,10 @@
+framework module WMATASwift {
+  umbrella header "WMATASwift.h"
+
+  export *
+  module * { export * }
+}
+
+module WMATASwift.Swift {
+    header "WMATASwift-Swift.h"
+}
