@@ -49,7 +49,6 @@ class PredictionViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    
     /*
     // MARK: - Navigation
 

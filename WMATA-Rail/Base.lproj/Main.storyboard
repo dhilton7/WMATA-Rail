@@ -9,19 +9,43 @@
         <scene sceneID="vfz-mN-6nf">
             <objects>
                 <tableViewController id="gDx-IQ-NRy" customClass="LinesTableViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aQI-5b-aDR">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="aQI-5b-aDR">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lineCell" id="pM0-wO-c9s">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lineCell" rowHeight="85" id="pM0-wO-c9s" customClass="LineTableViewCell" customModule="WMATA_Rail" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pM0-wO-c9s" id="20F-c2-PCb">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="84.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ReG-8H-AcJ">
+                                            <rect key="frame" x="0.0" y="76.5" width="600" height="8"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="8" id="iBS-Ez-dLX"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4C-qo-XIu">
+                                            <rect key="frame" x="300" y="42.5" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="20"/>
+                                            <color key="textColor" red="0.97647058823529409" green="0.96862745098039216" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="ReG-8H-AcJ" secondAttribute="bottom" id="IlG-so-mM0"/>
+                                        <constraint firstItem="i4C-qo-XIu" firstAttribute="centerX" secondItem="20F-c2-PCb" secondAttribute="centerX" id="anH-7w-gIf"/>
+                                        <constraint firstItem="i4C-qo-XIu" firstAttribute="centerY" secondItem="20F-c2-PCb" secondAttribute="centerY" id="c7t-0R-aUb"/>
+                                        <constraint firstAttribute="trailing" secondItem="ReG-8H-AcJ" secondAttribute="trailing" id="gxj-Fq-8cn"/>
+                                        <constraint firstItem="ReG-8H-AcJ" firstAttribute="leading" secondItem="20F-c2-PCb" secondAttribute="leading" id="jWs-ic-aTU"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="borderView" destination="ReG-8H-AcJ" id="Or8-Tt-n1l"/>
+                                    <outlet property="nameLabel" destination="i4C-qo-XIu" id="SY9-LD-gWs"/>
                                     <segue destination="iFA-7y-APd" kind="show" id="RYK-ez-Ibs"/>
                                 </connections>
                             </tableViewCell>
