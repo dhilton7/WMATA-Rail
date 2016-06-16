@@ -82,14 +82,16 @@ class StopsTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let controller = segue.destinationViewController as? PredictionViewController {
+            if let row = tableView.indexPathForSelectedRow?.row {
+                controller.stationCode = stops![row].code
+                controller.stationName = stops![row].name
+            }
+        }
     }
-    */
 
 }

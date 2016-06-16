@@ -53,6 +53,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XBN-Y8-1Gz" kind="show" id="5jf-fm-QjI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -65,6 +68,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uvm-pY-cHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2124" y="1063"/>
+        </scene>
+        <!--Prediction View Controller-->
+        <scene sceneID="KAz-94-3CK">
+            <objects>
+                <viewController id="XBN-Y8-1Gz" customClass="PredictionViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NbG-jN-f9F"/>
+                        <viewControllerLayoutGuide type="bottom" id="unX-T0-KHw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xo9-29-BoF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-KE-OoS">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="predictionCell" id="pev-0K-6bF">
+                                        <rect key="frame" x="0.0" y="65" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pev-0K-6bF" id="Vog-55-0G2">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="XBN-Y8-1Gz" id="flA-NR-xcs"/>
+                                    <outlet property="delegate" destination="XBN-Y8-1Gz" id="SyK-cW-Tqr"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nVb-KE-OoS" secondAttribute="trailing" id="6oH-9q-2Sa"/>
+                            <constraint firstItem="nVb-KE-OoS" firstAttribute="leading" secondItem="Xo9-29-BoF" secondAttribute="leading" id="8kk-zZ-UqT"/>
+                            <constraint firstItem="nVb-KE-OoS" firstAttribute="top" secondItem="NbG-jN-f9F" secondAttribute="bottom" id="Lzr-JU-ULF"/>
+                            <constraint firstItem="unX-T0-KHw" firstAttribute="top" secondItem="nVb-KE-OoS" secondAttribute="bottom" id="mRC-3v-8n9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="u8F-24-7a7"/>
+                    <connections>
+                        <outlet property="tableView" destination="nVb-KE-OoS" id="Rbf-5M-pXr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JvB-W8-uxJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2814" y="1063"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P4z-NT-MXq">
@@ -80,7 +131,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SED-8r-cfZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="1063"/>
+            <point key="canvasLocation" x="732" y="1063"/>
         </scene>
     </scenes>
 </document>
