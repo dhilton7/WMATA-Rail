@@ -111,20 +111,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="24v-sT-Ofr">
                             <size key="itemSize" width="150" height="150"/>
-                            <size key="headerReferenceSize" width="0.0" height="40"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="lineCell" id="QdO-9U-erH" customClass="LineCollectionViewCell" customModule="WMATA_Rail" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="104" width="150" height="150"/>
+                                <rect key="frame" x="0.0" y="64" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPA-bE-zwb">
-                                            <rect key="frame" x="16" y="16" width="118" height="118"/>
+                                            <rect key="frame" x="8" y="8" width="134" height="134"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
@@ -133,8 +133,8 @@
                                 <constraints>
                                     <constraint firstItem="aPA-bE-zwb" firstAttribute="centerX" secondItem="QdO-9U-erH" secondAttribute="centerX" id="4Pg-aT-Mh6"/>
                                     <constraint firstItem="aPA-bE-zwb" firstAttribute="centerY" secondItem="QdO-9U-erH" secondAttribute="centerY" id="V2d-U9-NdS"/>
-                                    <constraint firstItem="aPA-bE-zwb" firstAttribute="width" secondItem="QdO-9U-erH" secondAttribute="width" constant="-32" id="Whr-xb-XNa"/>
-                                    <constraint firstItem="aPA-bE-zwb" firstAttribute="height" secondItem="QdO-9U-erH" secondAttribute="height" constant="-32" id="sqp-wP-zNx"/>
+                                    <constraint firstItem="aPA-bE-zwb" firstAttribute="width" secondItem="QdO-9U-erH" secondAttribute="width" constant="-16" id="Whr-xb-XNa"/>
+                                    <constraint firstItem="aPA-bE-zwb" firstAttribute="height" secondItem="QdO-9U-erH" secondAttribute="height" constant="-16" id="sqp-wP-zNx"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="paletteView" destination="aPA-bE-zwb" id="tcr-aH-HlY"/>
@@ -142,10 +142,6 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="CDE-vW-Ckb">
-                            <rect key="frame" x="0.0" y="64" width="600" height="40"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="6KL-8y-roq" id="EpG-9o-efb"/>
                             <outlet property="delegate" destination="6KL-8y-roq" id="4av-bJ-z8f"/>

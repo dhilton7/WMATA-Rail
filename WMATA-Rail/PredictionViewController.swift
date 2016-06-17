@@ -45,7 +45,7 @@ class PredictionViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("predictionCell")!
-        cell.textLabel?.text = trains![indexPath.row].minString()
+        cell.textLabel?.text = "\(trains![indexPath.row].destinationName!)- \(trains![indexPath.row].minString())"
         return cell
     }
     

@@ -11,7 +11,7 @@ import WMATASwift
 
 private let reuseIdentifier = "Cell"
 
-class LinesCollectionViewController: UICollectionViewController {
+class LinesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     private var lines: [Line]?
     
@@ -20,13 +20,6 @@ class LinesCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-//        // Register cell classes
-//        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
         getLines()
     }
 
@@ -72,7 +65,7 @@ class LinesCollectionViewController: UICollectionViewController {
             return UIColor(red: 40/255.0, green: 99/255.0, blue: 178/255.0, alpha: 1.0)
         }
         else if color == "Green" {
-            return UIColor(red: 30/255.0, green: 233/255.0, blue: 70/255.0, alpha: 1.0)
+            return UIColor(red: 17/255.0, green: 219/255.0, blue: 111/255.0, alpha: 1.0)
         }
         else if color == "Orange" {
             return UIColor(red: 255/255.0, green: 128/255.0, blue: 0, alpha: 1.0)
@@ -107,19 +100,8 @@ class LinesCollectionViewController: UICollectionViewController {
         return true
     }
 
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let side = (self.view.frame.width - 16) / 2
+        return CGSize(width: side, height: side)
     }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
-    }
-    */
-
 }
