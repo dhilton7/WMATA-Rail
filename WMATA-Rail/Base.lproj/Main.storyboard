@@ -40,7 +40,7 @@
         <!--Prediction View Controller-->
         <scene sceneID="KAz-94-3CK">
             <objects>
-                <viewController id="XBN-Y8-1Gz" customClass="PredictionViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PredictionViewController" id="XBN-Y8-1Gz" customClass="PredictionViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NbG-jN-f9F"/>
                         <viewControllerLayoutGuide type="bottom" id="unX-T0-KHw"/>

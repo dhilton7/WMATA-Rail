@@ -22,6 +22,7 @@
 		9BDF26DB1D17543A00BEE020 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */; };
 		9BDF26DC1D17543D00BEE020 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */; };
 		9BDF26DD1D17543D00BEE020 /* WMATASwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9BDF26DF1D17597A00BEE020 /* MetroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF26DE1D17597A00BEE020 /* MetroAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		9BC2DB171D1222F200D8DEF0 /* PredictionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionViewController.swift; sourceTree = "<group>"; };
 		9BDF26D71D17510500BEE020 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMATASwift.framework; sourceTree = "<group>"; };
+		9BDF26DE1D17597A00BEE020 /* MetroAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				9BA393511D11D63200AE3ED9 /* Info.plist */,
 				9BC2DAF31D11DA6D00D8DEF0 /* Constants.swift */,
 				9BC2DAF51D11DB2300D8DEF0 /* Rail.swift */,
+				9BDF26DE1D17597A00BEE020 /* MetroAnnotation.swift */,
 			);
 			path = "WMATA-Rail";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				9BC2DB101D11E58200D8DEF0 /* StopsTableViewController.swift in Sources */,
 				9BC2DAF61D11DB2300D8DEF0 /* Rail.swift in Sources */,
 				9BA393461D11D63200AE3ED9 /* AppDelegate.swift in Sources */,
+				9BDF26DF1D17597A00BEE020 /* MetroAnnotation.swift in Sources */,
 				9B09BF491D124A310092D393 /* LineCollectionViewCell.swift in Sources */,
 				9B09BF471D124A1A0092D393 /* LinesCollectionViewController.swift in Sources */,
 				9BC2DB181D1222F200D8DEF0 /* PredictionViewController.swift in Sources */,
