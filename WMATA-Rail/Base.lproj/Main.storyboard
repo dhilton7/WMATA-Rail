@@ -89,7 +89,7 @@
         <scene sceneID="PbX-xA-wX0">
             <objects>
                 <navigationController id="5AF-FC-HNo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lines" id="YRl-JK-94D"/>
+                    <tabBarItem key="tabBarItem" title="Lines" image="LinesIcon" id="YRl-JK-94D"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0vu-2v-N34">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -106,7 +106,7 @@
         <scene sceneID="3x3-qw-rrq">
             <objects>
                 <navigationController id="a4e-0w-FVw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="lZ6-xA-hLb"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="lZ6-xA-hLb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dWc-wU-l4u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -119,7 +119,7 @@
             </objects>
             <point key="canvasLocation" x="733" y="1836"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="6Lh-gi-aId">
             <objects>
                 <viewController id="deU-xc-uBG" customClass="MapViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                             <constraint firstAttribute="trailing" secondItem="qGo-Bk-eR2" secondAttribute="trailing" id="wkb-XG-e6A"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xKN-3V-Hzz"/>
+                    <navigationItem key="navigationItem" title="Map" id="S2c-We-sud"/>
                     <connections>
                         <outlet property="mapView" destination="qGo-Bk-eR2" id="3PY-uz-YVT"/>
                     </connections>
@@ -223,4 +223,8 @@
             <point key="canvasLocation" x="1428" y="1063"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LinesIcon" width="25" height="25"/>
+        <image name="MapIcon" width="25" height="25"/>
+    </resources>
 </document>
