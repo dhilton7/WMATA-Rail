@@ -20,9 +20,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     private var stationAnnotations: [MetroAnnotation]?
     private var latestLocation: CLLocation?
     private var manager: CLLocationManager?
-    
-    private let lineCircleDiameter: CGFloat = 30
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,17 +71,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
                 annotationView?.canShowCallout = true
                 annotationView?.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure) as UIView
-                let linesView = UIView()
-                var buffer: CGFloat = 4
-                for line in metroPoint.station!.lineCodes! {
-                    let lineView = UIView(frame: CGRect(x: buffer, y: 8, width: lineCircleDiameter, height: lineCircleDiameter))
-                    lineView.layer.cornerRadius = lineCircleDiameter / 2
-                    lineView.backgroundColor = Rail.sharedInstance.stringToColor(line)
-                    linesView.addSubview(lineView)
-                    buffer += lineCircleDiameter + 4
-                }
-                linesView.frame = CGRect(x: 0, y: 0, width: buffer, height: lineCircleDiameter + 16)
-                annotationView?.leftCalloutAccessoryView = linesView
+                annotationView?.leftCalloutAccessoryView = Helper.getLinesView(metroPoint.station!)
             }
             else {
                 annotationView?.annotation = annotation
@@ -100,7 +88,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if let metroPoint = view.annotation as? MetroAnnotation {
             if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("StationViewController") as? StationViewController {
                 controller.station = metroPoint.station
-                controller.isFavorite = Rail.sharedInstance.isFavorite(metroPoint.station!.code!)
+                controller.isFavorite = Helper.isFavorite(metroPoint.station!.code!)
                 self.navigationController?.pushViewController(controller, animated: true)
             }
         }

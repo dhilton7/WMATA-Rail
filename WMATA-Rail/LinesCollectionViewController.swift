@@ -55,7 +55,7 @@ class LinesCollectionViewController: UICollectionViewController, UICollectionVie
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! LineCollectionViewCell
-        cell.setupCell(Rail.sharedInstance.stringToColor(lines![indexPath.row].displayName))
+        cell.setupCell(Helper.stringToColor(lines![indexPath.row].displayName))
         return cell
     }
     

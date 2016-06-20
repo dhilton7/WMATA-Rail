@@ -25,6 +25,7 @@
 		9BC2DB181D1222F200D8DEF0 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DB171D1222F200D8DEF0 /* StationViewController.swift */; };
 		9BDF26D81D17510500BEE020 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF26D71D17510500BEE020 /* MapViewController.swift */; };
 		9BDF26DF1D17597A00BEE020 /* MetroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF26DE1D17597A00BEE020 /* MetroAnnotation.swift */; };
+		9BE0A5D61D18A61F0082E344 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE0A5D51D18A61F0082E344 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9BC2DB171D1222F200D8DEF0 /* StationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		9BDF26D71D17510500BEE020 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9BDF26DE1D17597A00BEE020 /* MetroAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroAnnotation.swift; sourceTree = "<group>"; };
+		9BE0A5D51D18A61F0082E344 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				9BA3934E1D11D63200AE3ED9 /* LaunchScreen.storyboard */,
 				9BA393511D11D63200AE3ED9 /* Info.plist */,
 				9BC2DAF31D11DA6D00D8DEF0 /* Constants.swift */,
+				9BE0A5D51D18A61F0082E344 /* Helper.swift */,
 				9BC2DAF51D11DB2300D8DEF0 /* Rail.swift */,
 				9BDF26DE1D17597A00BEE020 /* MetroAnnotation.swift */,
 				9B6676F91D1828530039491A /* WMATA_Rail.xcdatamodeld */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC2DB101D11E58200D8DEF0 /* StopsTableViewController.swift in Sources */,
+				9BE0A5D61D18A61F0082E344 /* Helper.swift in Sources */,
 				9BC2DAF61D11DB2300D8DEF0 /* Rail.swift in Sources */,
 				9BA393461D11D63200AE3ED9 /* AppDelegate.swift in Sources */,
 				9BDF26DF1D17597A00BEE020 /* MetroAnnotation.swift in Sources */,

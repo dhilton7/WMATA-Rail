@@ -6,7 +6,7 @@
 //  Copyright © 2016 Dan Hilton. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
 
@@ -14,5 +14,6 @@ struct Constants {
     static let LonDC = -77.0369
     static let LatDC = 38.9072
     static let stationEntity = "Station"
+    static let lineCircleDiameter: CGFloat = 30
     
 }

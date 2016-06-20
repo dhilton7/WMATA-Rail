@@ -112,7 +112,7 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
         if let controller = segue.destinationViewController as? StationViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
                 controller.station = stops![row]
-                controller.isFavorite = Rail.sharedInstance.isFavorite(stops![row].code!)
+                controller.isFavorite = Helper.isFavorite(stops![row].code!)
             }
         }
     }
