@@ -3,10 +3,14 @@
     <entity name="Station" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lineCode1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineCode2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineCode3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lineCode4" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Station" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Station" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>

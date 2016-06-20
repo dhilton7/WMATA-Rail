@@ -14,6 +14,7 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var linesView: UIView!
     
     private var trains: [Train]?
     
@@ -28,13 +29,23 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.nameLabel.text = station?.name
         self.tableView.tableFooterView = UIView()
+        self.automaticallyAdjustsScrollViewInsets = false
         
         self.addFaveButton = UIBarButtonItem(image: UIImage(named: "FavoriteEmpty.png"), style: .Plain, target: self, action: "toggleFavorite:")
         self.removeFaveButton = UIBarButtonItem(image: UIImage(named: "FavoriteFilled.png"), style: .Plain, target: self, action: "toggleFavorite:")
 
         let btn = isFavorite! == true ? removeFaveButton : addFaveButton
         navigationItem.setRightBarButtonItem(btn, animated: false)
+        
         getPrediction()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let linesSubView = Helper.getLinesView(station!)
+        linesSubView.center.x = self.linesView.frame.width / 2
+        self.linesView.addSubview(linesSubView)
     }
 
     private func getPrediction() {
@@ -68,6 +79,9 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         station.setValue(self.station?.name, forKey: "name")
         station.setValue(self.station?.longitude, forKey: "longitude")
         station.setValue(self.station?.latitude, forKey: "latitude")
+        for (i, lineCode) in self.station!.lineCodes!.enumerate() {
+            station.setValue(lineCode, forKey:"lineCode\(i+1)")
+        }
         
         do {
             try managedContext.save()

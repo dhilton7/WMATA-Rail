@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Stops-->
@@ -57,8 +58,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-KE-OoS">
-                                <rect key="frame" x="0.0" y="96" width="600" height="455"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-KE-OoS">
+                                <rect key="frame" x="0.0" y="149" width="600" height="402"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="predictionCell" id="pev-0K-6bF">
@@ -81,26 +82,39 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="njD-32-hgm">
+                                <rect key="frame" x="36" y="88" width="528" height="45"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="y7R-TL-DvP"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.94117647058823528" green="0.94901960784313721" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="njD-32-hgm" firstAttribute="top" secondItem="DrJ-w7-e30" secondAttribute="bottom" constant="8" id="0p5-ZI-ZGW"/>
                             <constraint firstAttribute="trailing" secondItem="nVb-KE-OoS" secondAttribute="trailing" id="6oH-9q-2Sa"/>
+                            <constraint firstItem="njD-32-hgm" firstAttribute="leading" secondItem="Xo9-29-BoF" secondAttribute="leadingMargin" constant="16" id="6wO-DU-uaU"/>
                             <constraint firstItem="nVb-KE-OoS" firstAttribute="leading" secondItem="Xo9-29-BoF" secondAttribute="leading" id="8kk-zZ-UqT"/>
                             <constraint firstItem="nVb-KE-OoS" firstAttribute="top" secondItem="NbG-jN-f9F" secondAttribute="bottom" id="Lzr-JU-ULF"/>
                             <constraint firstItem="DrJ-w7-e30" firstAttribute="leading" secondItem="Xo9-29-BoF" secondAttribute="leading" constant="16" id="O4n-Tj-asl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="njD-32-hgm" secondAttribute="trailing" constant="16" id="cYc-8C-lcn"/>
                             <constraint firstAttribute="trailing" secondItem="DrJ-w7-e30" secondAttribute="trailing" constant="16" id="do0-cE-CBx"/>
                             <constraint firstItem="unX-T0-KHw" firstAttribute="top" secondItem="nVb-KE-OoS" secondAttribute="bottom" id="mRC-3v-8n9"/>
+                            <constraint firstItem="nVb-KE-OoS" firstAttribute="top" secondItem="njD-32-hgm" secondAttribute="bottom" constant="16" id="n1r-cg-4Pb"/>
                             <constraint firstItem="nVb-KE-OoS" firstAttribute="top" secondItem="DrJ-w7-e30" secondAttribute="bottom" constant="16" id="rNI-OG-an4"/>
                             <constraint firstItem="DrJ-w7-e30" firstAttribute="top" secondItem="NbG-jN-f9F" secondAttribute="bottom" constant="16" id="zqk-St-2sv"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Lzr-JU-ULF"/>
+                                <exclude reference="rNI-OG-an4"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Stop Detail" id="Zbk-z9-aXg"/>
                     <connections>
+                        <outlet property="linesView" destination="njD-32-hgm" id="Jv1-yB-6Vl"/>
                         <outlet property="nameLabel" destination="DrJ-w7-e30" id="Hwo-uJ-I9D"/>
                         <outlet property="tableView" destination="nVb-KE-OoS" id="Rbf-5M-pXr"/>
                     </connections>

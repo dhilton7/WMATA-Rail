@@ -67,10 +67,7 @@ class FavoriteTableViewController: UITableViewController {
             if let index = tableView.indexPathForSelectedRow?.row {
                 let station = Station()
                 let stop = Rail.sharedInstance.faveStations![index]
-                station.code = stop.valueForKey("code") as? String
-                station.latitude = stop.valueForKey("latitude") as? Double
-                station.longitude = stop.valueForKey("longitude") as? Double
-                station.name = stop.valueForKey("name") as? String
+                station.addAttributesFromManagedObj(stop)
                 controller.station = station
                 controller.isFavorite = true
             }

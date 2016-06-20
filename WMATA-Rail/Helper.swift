@@ -8,6 +8,7 @@
 
 import UIKit
 import WMATASwift
+import CoreData
 
 public class Helper {
     
@@ -52,4 +53,22 @@ public class Helper {
         linesView.frame = CGRect(x: 0, y: 0, width: buffer, height: Constants.lineCircleDiameter + 16)
         return linesView
     }
+}
+
+public extension Station {
+    
+    public func addAttributesFromManagedObj(stop: NSManagedObject) {
+        code = stop.valueForKey("code") as? String
+        latitude = stop.valueForKey("latitude") as? Double
+        longitude = stop.valueForKey("longitude") as? Double
+        name = stop.valueForKey("name") as? String
+        lineCodes = [String]()
+        for i in 1...4 {
+            if let lc = stop.valueForKey("lineCode\(i)") as? String {
+                lineCodes?.append(lc)
+            }
+        }
+        
+    }
+    
 }
