@@ -159,11 +159,11 @@
             </objects>
             <point key="canvasLocation" x="1428" y="2598"/>
         </scene>
-        <!--Item-->
+        <!--Favorite-->
         <scene sceneID="qmF-X4-jNk">
             <objects>
                 <navigationController id="P0x-y3-zD8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="OoU-Nh-3uN"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="StarIcon" id="OoU-Nh-3uN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JSE-wK-COn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -294,6 +294,7 @@
     <resources>
         <image name="LinesIcon" width="25" height="25"/>
         <image name="MapIcon" width="25" height="25"/>
+        <image name="StarIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bLj-U4-T75"/>
