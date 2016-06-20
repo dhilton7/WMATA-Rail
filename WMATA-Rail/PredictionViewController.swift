@@ -8,6 +8,7 @@
 
 import UIKit
 import WMATASwift
+import CoreData
 
 class PredictionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,13 +16,12 @@ class PredictionViewController: UIViewController, UITableViewDelegate, UITableVi
     
     private var trains: [Train]?
     
-    var stationCode: String?
-    var stationName: String?
+    var station: Station?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = stationName
+        self.title = station?.name
         self.tableView.tableFooterView = UIView()
         
         getPrediction()
@@ -29,8 +29,7 @@ class PredictionViewController: UIViewController, UITableViewDelegate, UITableVi
 
     private func getPrediction() {
         
-        Rail.sharedInstance.wrapper.getNextTrain(stationCode, success: { (trains:[Train]) in
-            
+        Rail.sharedInstance.wrapper.getNextTrain(station?.code, success: { (trains:[Train]) in
             self.trains = trains
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
@@ -38,7 +37,6 @@ class PredictionViewController: UIViewController, UITableViewDelegate, UITableVi
         }) { (error:NSError) in
             
         }
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +47,24 @@ class PredictionViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = self.tableView.dequeueReusableCellWithIdentifier("predictionCell")!
         cell.textLabel?.text = "\(trains![indexPath.row].destinationName!)- \(trains![indexPath.row].minString())"
         return cell
+    }
+    
+    private func addfavoriteStation() {
+        let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let entity = NSEntityDescription.entityForName("Station", inManagedObjectContext: managedContext)
+        let station = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        station.setValue(self.station?.code, forKey: "code")
+        station.setValue(self.station?.name, forKey: "name")
+        station.setValue(self.station?.longitude, forKey: "longitude")
+        station.setValue(self.station?.latitude, forKey: "latitude")
+        
+        do {
+            try managedContext.save()
+            Rail.sharedInstance.faveStations?.append(station)
+        } catch let error {
+            debugPrint(error)
+        }
     }
     
     /*

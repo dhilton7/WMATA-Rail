@@ -8,9 +8,10 @@
 
 import UIKit
 import MapKit
+import WMATASwift
 
 class MetroAnnotation: MKPointAnnotation {
 
-    var stationCode: String?
+    var station: Station?
     let imgName = "TrainIcon.png"
 }

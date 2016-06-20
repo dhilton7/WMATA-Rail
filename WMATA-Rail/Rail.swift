@@ -8,10 +8,12 @@
 
 import Foundation
 import WMATASwift
+import CoreData
 
 class Rail {
     
     let wrapper = WMATASwift(apiKey: Constants.apiKey)
+    var faveStations: [NSManagedObject]?              //TODO: Might want to move into model extension
     
     class var sharedInstance : Rail {
         struct Static {

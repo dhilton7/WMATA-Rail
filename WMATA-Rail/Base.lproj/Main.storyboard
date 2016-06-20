@@ -127,6 +127,52 @@
             </objects>
             <point key="canvasLocation" x="733" y="1836"/>
         </scene>
+        <!--Favorite Stations-->
+        <scene sceneID="3qD-3L-Ke8">
+            <objects>
+                <tableViewController id="oQF-WU-dfz" customClass="FavoriteTableViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="eDN-8m-nTG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="faveCell" id="32u-6r-xyd">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="32u-6r-xyd" id="rg1-XE-zxP">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oQF-WU-dfz" id="21F-jd-ZcA"/>
+                            <outlet property="delegate" destination="oQF-WU-dfz" id="EIC-Pr-0Ys"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favorite Stations" id="3et-xL-QKe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lq3-YC-yLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1428" y="2598"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="qmF-X4-jNk">
+            <objects>
+                <navigationController id="P0x-y3-zD8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="OoU-Nh-3uN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JSE-wK-COn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oQF-WU-dfz" kind="relationship" relationship="rootViewController" id="SU5-Oa-8K8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LbU-rx-Z9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="733" y="2598"/>
+        </scene>
         <!--Map-->
         <scene sceneID="6Lh-gi-aId">
             <objects>
@@ -172,11 +218,12 @@
                     <connections>
                         <segue destination="5AF-FC-HNo" kind="relationship" relationship="viewControllers" id="hnj-5i-JL9"/>
                         <segue destination="a4e-0w-FVw" kind="relationship" relationship="viewControllers" id="rII-rR-7Iu"/>
+                        <segue destination="P0x-y3-zD8" kind="relationship" relationship="viewControllers" id="tKS-zr-NgG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IB8-8h-Zds" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-110" y="1427"/>
+            <point key="canvasLocation" x="-102" y="1836"/>
         </scene>
         <!--Lines-->
         <scene sceneID="dld-LY-iOv">

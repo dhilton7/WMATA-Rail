@@ -46,7 +46,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 annotation.coordinate = CLLocationCoordinate2D(latitude: s.latitude!, longitude: s.longitude!)
                 annotation.title = s.name
                 annotation.subtitle = s.lineCodes?.joinWithSeparator(", ")
-                annotation.stationCode = s.code
+                annotation.station = s
                 self.stationAnnotations!.append(annotation)
             }
         }
@@ -77,8 +77,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let metroPoint = view.annotation as? MetroAnnotation {
             if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PredictionViewController") as? PredictionViewController {
-                controller.stationCode = metroPoint.stationCode
-                controller.stationName = metroPoint.title
+                controller.station = metroPoint.station
                 self.navigationController?.pushViewController(controller, animated: true)
             }
         }

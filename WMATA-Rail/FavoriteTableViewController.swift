@@ -1,40 +1,23 @@
 //
-//  StopsTableViewController.swift
+//  FavoriteTableViewController.swift
 //  WMATA-Rail
 //
-//  Created by Dan Hilton on 6/15/16.
+//  Created by Dan Hilton on 6/20/16.
 //  Copyright © 2016 Dan Hilton. All rights reserved.
 //
 
 import UIKit
-import WMATASwift
 
-class StopsTableViewController: UITableViewController, UISearchBarDelegate {
-
-    @IBOutlet weak var searchBar: UISearchBar!
-    
-    var lineCode: String?
-    private var stops: [Station]?
-    private var filteredStops: [Station]?
+class FavoriteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchBar.delegate = self
-        
-        getStops()
     }
 
-    private func getStops() {
-        Rail.sharedInstance.wrapper.getStopsForLine(self.lineCode, success: { (stations:[Station]) in
-            self.stops = stations
-            self.filteredStops = stations
-            dispatch_async(dispatch_get_main_queue(), {
-                self.tableView.reloadData()
-            })
-        }) { (error:NSError) in
-            
-        }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -44,31 +27,18 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.filteredStops?.count ?? 0
+        return Rail.sharedInstance.faveStations?.count ?? 0
     }
 
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("stopCell", forIndexPath: indexPath)
-        cell.textLabel?.text = filteredStops![indexPath.row].name
+        let cell = tableView.dequeueReusableCellWithIdentifier("faveCell", forIndexPath: indexPath)
+        if let name = Rail.sharedInstance.faveStations?[indexPath.row].valueForKey("name") as? String {
+            cell.textLabel?.text = name
+        }
         return cell
     }
     
-    // MARK: - Search Bar Delegate
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        filterResults(searchText)
-    }
-    
-    private func filterResults(searchText: String) {
-        if stops != nil && !searchText.isEmpty {
-            filteredStops = self.stops!.filter({ (station:Station) -> Bool in
-                return station.name!.lowercaseString.containsString(searchText.lowercaseString)
-            })
-        }
-        else {
-            filteredStops = self.stops
-        }
-        tableView.reloadData()
-    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -105,15 +75,14 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     }
     */
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? PredictionViewController {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                controller.station = stops![row]
-            }
-        }
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }
