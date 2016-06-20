@@ -29,10 +29,6 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.nameLabel.text = station?.name
         self.tableView.tableFooterView = UIView()
         
-        // TODO- DEBUG: CHANGE
-        isFavorite = false
-        // END DEBUG
-        
         self.addFaveButton = UIBarButtonItem(image: UIImage(named: "FavoriteEmpty.png"), style: .Plain, target: self, action: "toggleFavorite:")
         self.removeFaveButton = UIBarButtonItem(image: UIImage(named: "FavoriteFilled.png"), style: .Plain, target: self, action: "toggleFavorite:")
 

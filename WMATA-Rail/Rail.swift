@@ -41,4 +41,8 @@ class Rail {
         }
     }
     
+    func isFavorite(stationCode: String) -> Bool {
+        return self.faveStations?.contains({ $0.valueForKey("code") as! String == stationCode }) ?? false
+    }
+    
 }

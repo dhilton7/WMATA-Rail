@@ -72,6 +72,7 @@ class FavoriteTableViewController: UITableViewController {
                 station.longitude = stop.valueForKey("longitude") as? Double
                 station.name = stop.valueForKey("name") as? String
                 controller.station = station
+                controller.isFavorite = true
             }
         }
     }
