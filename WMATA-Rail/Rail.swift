@@ -15,12 +15,8 @@ class Rail {
     let wrapper = WMATASwift(apiKey: Constants.apiKey)
     var faveStations: [NSManagedObject]?              //TODO: Might want to move into model extension
     
-    class var sharedInstance : Rail {
-        struct Static {
-            static let instance: Rail = Rail()
-        }
-        return Static.instance
-    }
+    static let sharedInstance = Rail()
+    private init() {}  //This prevents others from using the default '()' initializer for this class.
     
     func getFavoriteStations() {
         let fetchStation = NSFetchRequest(entityName: Constants.stationEntity)
