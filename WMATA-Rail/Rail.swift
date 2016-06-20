@@ -22,4 +22,14 @@ class Rail {
         return Static.instance
     }
     
+    func getFavoriteStations() {
+        let fetchStation = NSFetchRequest(entityName: Constants.stationEntity)
+        do {
+            let results = try (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext.executeFetchRequest(fetchStation)
+            Rail.sharedInstance.faveStations = results as? [NSManagedObject]
+        } catch let error {
+            debugPrint(error)
+        }
+    }
+    
 }
