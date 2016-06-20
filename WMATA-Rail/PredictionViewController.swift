@@ -22,6 +22,8 @@ class PredictionViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         
         self.title = stationName
+        self.tableView.tableFooterView = UIView()
+        
         getPrediction()
     }
 
