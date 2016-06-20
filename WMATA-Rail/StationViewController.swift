@@ -80,11 +80,11 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func toggleFavorite(sender: AnyObject) {
         let fave = isFavorite ?? false
         if fave == false {
-            // Save to be favorite
             self.addfavoriteStation()
         }
         else {
             // Delete from favorite
+            
         }
         isFavorite = !fave
         let btn = isFavorite! == true ? removeFaveButton : addFaveButton
