@@ -14,6 +14,7 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var lineCode: String?
+
     private var stops: [Station]?
     private var filteredStops: [Station]?
 
@@ -28,13 +29,32 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     private func getStops() {
         Rail.sharedInstance.wrapper.getStopsForLine(self.lineCode, success: { (stations:[Station]) in
             self.stops = stations
-            self.filteredStops = stations
+            self.orderStops()
+            self.filteredStops = self.stops
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
             })
         }) { (error:NSError) in
             
         }
+    }
+    
+    private func orderStops() {
+        var codeLetter: Character?
+        var orderedStops = [Station]()
+        for s in stops! {
+            let newCode = s.code![s.code!.startIndex.advancedBy(0)]
+            codeLetter = codeLetter ?? newCode
+            if newCode == codeLetter! {
+                orderedStops.append(s)
+            }
+            else {
+                codeLetter = newCode
+                orderedStops = orderedStops.reverse()
+                orderedStops.append(s)
+            }
+        }
+        self.stops = orderedStops
     }
 
     // MARK: - Table view data source
