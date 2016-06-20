@@ -13,9 +13,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="t5Z-tC-E0F">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopCell" id="AzV-YA-VBT">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AzV-YA-VBT" id="zDl-dn-3qo">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -32,6 +37,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Stops" id="lp7-6a-3fp"/>
+                    <connections>
+                        <outlet property="searchBar" destination="t5Z-tC-E0F" id="Waa-iV-ObB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uvm-pY-cHh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

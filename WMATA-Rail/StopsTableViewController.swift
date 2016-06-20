@@ -9,13 +9,18 @@
 import UIKit
 import WMATASwift
 
-class StopsTableViewController: UITableViewController {
+class StopsTableViewController: UITableViewController, UISearchBarDelegate {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var lineCode: String?
     private var stops: [Station]?
+    private var filteredStops: [Station]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
         
         getStops()
     }
@@ -23,6 +28,7 @@ class StopsTableViewController: UITableViewController {
     private func getStops() {
         Rail.sharedInstance.wrapper.getStopsForLine(self.lineCode, success: { (stations:[Station]) in
             self.stops = stations
+            self.filteredStops = stations
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
             })
@@ -38,13 +44,30 @@ class StopsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.stops?.count ?? 0
+        return self.filteredStops?.count ?? 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("stopCell", forIndexPath: indexPath)
-        cell.textLabel?.text = stops![indexPath.row].name
+        cell.textLabel?.text = filteredStops![indexPath.row].name
         return cell
+    }
+    
+    // MARK: - Search Bar Delegate
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        filterResults(searchText)
+    }
+    
+    private func filterResults(searchText: String) {
+        if stops != nil && !searchText.isEmpty {
+            filteredStops = self.stops!.filter({ (station:Station) -> Bool in
+                return station.name!.lowercaseString.containsString(searchText.lowercaseString)
+            })
+        }
+        else {
+            filteredStops = self.stops
+        }
+        tableView.reloadData()
     }
 
     /*
