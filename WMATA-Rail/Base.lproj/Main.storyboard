@@ -143,6 +143,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XBN-Y8-1Gz" kind="show" id="bLj-U4-T75"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -292,4 +295,7 @@
         <image name="LinesIcon" width="25" height="25"/>
         <image name="MapIcon" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bLj-U4-T75"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -11,6 +11,9 @@
 		9B09BF491D124A310092D393 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09BF481D124A310092D393 /* LineCollectionViewCell.swift */; };
 		9B6676FB1D1828530039491A /* WMATA_Rail.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B6676F91D1828530039491A /* WMATA_Rail.xcdatamodeld */; };
 		9B6676FD1D1831BA0039491A /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6676FC1D1831BA0039491A /* FavoriteTableViewController.swift */; };
+		9B6677011D183F750039491A /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6677001D183F750039491A /* WMATASwift.framework */; };
+		9B6677021D183F780039491A /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6677001D183F750039491A /* WMATASwift.framework */; };
+		9B6677031D183F780039491A /* WMATASwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B6677001D183F750039491A /* WMATASwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9BA393461D11D63200AE3ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA393451D11D63200AE3ED9 /* AppDelegate.swift */; };
 		9BA3934B1D11D63200AE3ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA393491D11D63200AE3ED9 /* Main.storyboard */; };
 		9BA3934D1D11D63200AE3ED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3934C1D11D63200AE3ED9 /* Assets.xcassets */; };
@@ -21,9 +24,6 @@
 		9BC2DB101D11E58200D8DEF0 /* StopsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DB0F1D11E58200D8DEF0 /* StopsTableViewController.swift */; };
 		9BC2DB181D1222F200D8DEF0 /* PredictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2DB171D1222F200D8DEF0 /* PredictionViewController.swift */; };
 		9BDF26D81D17510500BEE020 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF26D71D17510500BEE020 /* MapViewController.swift */; };
-		9BDF26DB1D17543A00BEE020 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */; };
-		9BDF26DC1D17543D00BEE020 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */; };
-		9BDF26DD1D17543D00BEE020 /* WMATASwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9BDF26DF1D17597A00BEE020 /* MetroAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF26DE1D17597A00BEE020 /* MetroAnnotation.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +44,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9BDF26DD1D17543D00BEE020 /* WMATASwift.framework in Embed Frameworks */,
+				9B6677031D183F780039491A /* WMATASwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +56,7 @@
 		9B09BF481D124A310092D393 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B6676FA1D1828530039491A /* WMATA_Rail.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WMATA_Rail.xcdatamodel; sourceTree = "<group>"; };
 		9B6676FC1D1831BA0039491A /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		9B6677001D183F750039491A /* WMATASwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMATASwift.framework; sourceTree = "<group>"; };
 		9BA393421D11D63200AE3ED9 /* WMATA-Rail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WMATA-Rail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA393451D11D63200AE3ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BA3934A1D11D63200AE3ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,7 +71,6 @@
 		9BC2DB0F1D11E58200D8DEF0 /* StopsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopsTableViewController.swift; sourceTree = "<group>"; };
 		9BC2DB171D1222F200D8DEF0 /* PredictionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionViewController.swift; sourceTree = "<group>"; };
 		9BDF26D71D17510500BEE020 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMATASwift.framework; sourceTree = "<group>"; };
 		9BDF26DE1D17597A00BEE020 /* MetroAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,8 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BDF26DB1D17543A00BEE020 /* WMATASwift.framework in Frameworks */,
-				9BDF26DC1D17543D00BEE020 /* WMATASwift.framework in Frameworks */,
+				9B6677011D183F750039491A /* WMATASwift.framework in Frameworks */,
+				9B6677021D183F780039491A /* WMATASwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +100,7 @@
 				9BA393441D11D63200AE3ED9 /* WMATA-Rail */,
 				9BA393591D11D63200AE3ED9 /* WMATA-RailTests */,
 				9BA393431D11D63200AE3ED9 /* Products */,
-				9BDF26DA1D17543A00BEE020 /* WMATASwift.framework */,
+				9B6677001D183F750039491A /* WMATASwift.framework */,
 			);
 			sourceTree = "<group>";
 		};

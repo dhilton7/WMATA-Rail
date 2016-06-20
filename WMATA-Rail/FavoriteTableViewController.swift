@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import WMATASwift
 
 class FavoriteTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -38,7 +39,6 @@ class FavoriteTableViewController: UITableViewController {
         }
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
@@ -75,14 +75,22 @@ class FavoriteTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let controller = segue.destinationViewController as? PredictionViewController {
+            if let index = tableView.indexPathForSelectedRow?.row {
+                let station = Station()
+                let stop = Rail.sharedInstance.faveStations![index]
+                station.code = stop.valueForKey("code") as? String
+                station.latitude = stop.valueForKey("latitude") as? Double
+                station.longitude = stop.valueForKey("longitude") as? Double
+                station.name = stop.valueForKey("name") as? String
+                controller.station = station
+            }
+        }
     }
-    */
 
 }
