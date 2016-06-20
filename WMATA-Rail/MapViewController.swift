@@ -9,21 +9,28 @@
 import UIKit
 import WMATASwift
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     
     @IBOutlet weak var mapView: MKMapView!
     
-    
     private var stations: [Station]?
     private var stationAnnotations: [MetroAnnotation]?
+    private var latestLocation: CLLocation?
+    private var manager: CLLocationManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        manager = CLLocationManager()
+        manager?.delegate = self
+        manager?.requestWhenInUseAuthorization()
+        
         mapView.delegate = self
-        mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: Constants.LatDC, longitude: Constants.LonDC), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: false)
+        mapView.showsUserLocation = true
+
         getStations()
     }
     
@@ -39,6 +46,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     }
     
     private func updateMapUI() {
+        if latestLocation != nil {
+            mapView.setRegion(MKCoordinateRegion(center: latestLocation!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)), animated: false)
+        }
         if stations != nil && stationAnnotations == nil {
             stationAnnotations = [MetroAnnotation]()
             for s in stations! {
@@ -80,6 +90,21 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 controller.station = metroPoint.station
                 self.navigationController?.pushViewController(controller, animated: true)
             }
+        }
+    }
+    
+    // MARK: Location Manager Delegate
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        manager.stopUpdatingLocation()
+        self.latestLocation = newLocation
+    }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if status == .AuthorizedWhenInUse {
+            manager.startUpdatingLocation()
+        }
+        else if status == .Denied {
+            mapView.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: Constants.LatDC, longitude: Constants.LonDC), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: false)
         }
     }
 
