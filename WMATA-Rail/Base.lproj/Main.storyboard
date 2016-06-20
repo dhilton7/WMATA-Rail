@@ -37,7 +37,9 @@
                             <outlet property="delegate" destination="iFA-7y-APd" id="1Sj-Fu-5aN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Stops" id="lp7-6a-3fp"/>
+                    <navigationItem key="navigationItem" title="Stops" id="lp7-6a-3fp">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Sq2-QR-k6F"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="t5Z-tC-E0F" id="Waa-iV-ObB"/>
                     </connections>
@@ -112,7 +114,9 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Stop Detail" id="Zbk-z9-aXg"/>
+                    <navigationItem key="navigationItem" title="Stop Detail" id="Zbk-z9-aXg">
+                        <barButtonItem key="backBarButtonItem" title=" " id="h8z-JC-Yr0"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="linesView" destination="njD-32-hgm" id="Jv1-yB-6Vl"/>
                         <outlet property="nameLabel" destination="DrJ-w7-e30" id="Hwo-uJ-I9D"/>
@@ -157,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="733" y="1836"/>
         </scene>
-        <!--Favorite Stations-->
+        <!--Favorites-->
         <scene sceneID="3qD-3L-Ke8">
             <objects>
                 <tableViewController id="oQF-WU-dfz" customClass="FavoriteTableViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
@@ -183,7 +187,9 @@
                             <outlet property="delegate" destination="oQF-WU-dfz" id="EIC-Pr-0Ys"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorite Stations" id="3et-xL-QKe"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="3et-xL-QKe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Xrf-5V-6Vx"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lq3-YC-yLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,7 +236,9 @@
                             <constraint firstAttribute="trailing" secondItem="qGo-Bk-eR2" secondAttribute="trailing" id="wkb-XG-e6A"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="S2c-We-sud"/>
+                    <navigationItem key="navigationItem" title="Map" id="S2c-We-sud">
+                        <barButtonItem key="backBarButtonItem" title=" " id="7gK-zT-axP"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="qGo-Bk-eR2" id="3PY-uz-YVT"/>
                     </connections>
@@ -314,7 +322,9 @@
                             <outlet property="delegate" destination="6KL-8y-roq" id="4av-bJ-z8f"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Lines" id="kQ1-O0-jwh"/>
+                    <navigationItem key="navigationItem" title="Lines" id="kQ1-O0-jwh">
+                        <barButtonItem key="backBarButtonItem" title=" " id="SsZ-WT-3Bg"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqZ-hk-C9S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -327,6 +337,6 @@
         <image name="StarIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5jf-fm-QjI"/>
+        <segue reference="bLj-U4-T75"/>
     </inferredMetricsTieBreakers>
 </document>
