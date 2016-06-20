@@ -8,8 +8,11 @@
 
 import UIKit
 import WMATASwift
+import CoreData
 
 class FavoriteTableViewController: UITableViewController {
+    
+    private var favoriteStations: [NSManagedObject]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +21,7 @@ class FavoriteTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.favoriteStations = Rail.sharedInstance.faveStations
         self.tableView.reloadData()
     }
 
@@ -28,52 +32,31 @@ class FavoriteTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Rail.sharedInstance.faveStations?.count ?? 0
+        return favoriteStations?.count ?? 0
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("faveCell", forIndexPath: indexPath)
-        if let name = Rail.sharedInstance.faveStations?[indexPath.row].valueForKey("name") as? String {
+        if let name = favoriteStations?[indexPath.row].valueForKey("name") as? String {
             cell.textLabel?.text = name
         }
         return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
+            self.deleteFavoriteStation(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    private func deleteFavoriteStation(row: Int) {
+        let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        managedContext.deleteObject(favoriteStations![row])
+        favoriteStations!.removeAtIndex(row)
+        Rail.sharedInstance.saveStations(managedContext)
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation

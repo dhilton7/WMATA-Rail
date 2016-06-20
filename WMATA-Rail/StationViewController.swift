@@ -17,7 +17,11 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private var trains: [Train]?
     
+    private var addFaveButton: UIBarButtonItem!
+    private var removeFaveButton: UIBarButtonItem!
+    
     var station: Station?
+    var isFavorite: Bool?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,15 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.nameLabel.text = station?.name
         self.tableView.tableFooterView = UIView()
         
+        // TODO- DEBUG: CHANGE
+        isFavorite = false
+        // END DEBUG
+        
+        self.addFaveButton = UIBarButtonItem(image: UIImage(named: "FavoriteEmpty.png"), style: .Plain, target: self, action: "toggleFavorite:")
+        self.removeFaveButton = UIBarButtonItem(image: UIImage(named: "FavoriteFilled.png"), style: .Plain, target: self, action: "toggleFavorite:")
+
+        let btn = isFavorite! == true ? removeFaveButton : addFaveButton
+        navigationItem.setRightBarButtonItem(btn, animated: false)
         getPrediction()
     }
 
@@ -68,6 +81,19 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    @IBAction func toggleFavorite(sender: AnyObject) {
+        let fave = isFavorite ?? false
+        if fave == false {
+            // Save to be favorite
+            self.addfavoriteStation()
+        }
+        else {
+            // Delete from favorite
+        }
+        isFavorite = !fave
+        let btn = isFavorite! == true ? removeFaveButton : addFaveButton
+        navigationItem.setRightBarButtonItem(btn, animated: false)
+    }
     /*
     // MARK: - Navigation
 

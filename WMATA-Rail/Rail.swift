@@ -32,4 +32,13 @@ class Rail {
         }
     }
     
+    func saveStations(context: NSManagedObjectContext) {
+        do {
+            try context.save()
+            getFavoriteStations()
+        } catch let error {
+            debugPrint(error)
+        }
+    }
+    
 }
