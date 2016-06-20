@@ -10,9 +10,10 @@ import UIKit
 import WMATASwift
 import CoreData
 
-class PredictionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameLabel: UILabel!
     
     private var trains: [Train]?
     
@@ -21,7 +22,7 @@ class PredictionViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = station?.name
+        self.nameLabel.text = station?.name
         self.tableView.tableFooterView = UIView()
         
         getPrediction()

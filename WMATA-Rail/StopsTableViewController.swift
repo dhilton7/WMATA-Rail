@@ -109,7 +109,7 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? PredictionViewController {
+        if let controller = segue.destinationViewController as? StationViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
                 controller.station = stops![row]
             }

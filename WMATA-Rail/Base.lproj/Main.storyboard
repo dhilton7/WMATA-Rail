@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="2124" y="1063"/>
         </scene>
-        <!--Prediction View Controller-->
+        <!--Stop Detail-->
         <scene sceneID="KAz-94-3CK">
             <objects>
-                <viewController storyboardIdentifier="PredictionViewController" id="XBN-Y8-1Gz" customClass="PredictionViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StationViewController" id="XBN-Y8-1Gz" customClass="StationViewController" customModule="WMATA_Rail" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NbG-jN-f9F"/>
                         <viewControllerLayoutGuide type="bottom" id="unX-T0-KHw"/>
@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-KE-OoS">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="96" width="600" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="predictionCell" id="pev-0K-6bF">
@@ -75,17 +75,33 @@
                                     <outlet property="delegate" destination="XBN-Y8-1Gz" id="SyK-cW-Tqr"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrJ-w7-e30">
+                                <rect key="frame" x="16" y="80" width="568" height="0.0"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="nVb-KE-OoS" secondAttribute="trailing" id="6oH-9q-2Sa"/>
                             <constraint firstItem="nVb-KE-OoS" firstAttribute="leading" secondItem="Xo9-29-BoF" secondAttribute="leading" id="8kk-zZ-UqT"/>
                             <constraint firstItem="nVb-KE-OoS" firstAttribute="top" secondItem="NbG-jN-f9F" secondAttribute="bottom" id="Lzr-JU-ULF"/>
+                            <constraint firstItem="DrJ-w7-e30" firstAttribute="leading" secondItem="Xo9-29-BoF" secondAttribute="leading" constant="16" id="O4n-Tj-asl"/>
+                            <constraint firstAttribute="trailing" secondItem="DrJ-w7-e30" secondAttribute="trailing" constant="16" id="do0-cE-CBx"/>
                             <constraint firstItem="unX-T0-KHw" firstAttribute="top" secondItem="nVb-KE-OoS" secondAttribute="bottom" id="mRC-3v-8n9"/>
+                            <constraint firstItem="nVb-KE-OoS" firstAttribute="top" secondItem="DrJ-w7-e30" secondAttribute="bottom" constant="16" id="rNI-OG-an4"/>
+                            <constraint firstItem="DrJ-w7-e30" firstAttribute="top" secondItem="NbG-jN-f9F" secondAttribute="bottom" constant="16" id="zqk-St-2sv"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lzr-JU-ULF"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="u8F-24-7a7"/>
+                    <navigationItem key="navigationItem" title="Stop Detail" id="Zbk-z9-aXg"/>
                     <connections>
+                        <outlet property="nameLabel" destination="DrJ-w7-e30" id="Hwo-uJ-I9D"/>
                         <outlet property="tableView" destination="nVb-KE-OoS" id="Rbf-5M-pXr"/>
                     </connections>
                 </viewController>

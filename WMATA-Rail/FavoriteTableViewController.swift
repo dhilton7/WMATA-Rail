@@ -80,7 +80,7 @@ class FavoriteTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let controller = segue.destinationViewController as? PredictionViewController {
+        if let controller = segue.destinationViewController as? StationViewController {
             if let index = tableView.indexPathForSelectedRow?.row {
                 let station = Station()
                 let stop = Rail.sharedInstance.faveStations![index]

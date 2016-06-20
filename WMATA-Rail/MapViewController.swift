@@ -76,7 +76,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let metroPoint = view.annotation as? MetroAnnotation {
-            if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PredictionViewController") as? PredictionViewController {
+            if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("StationViewController") as? StationViewController {
                 controller.station = metroPoint.station
                 self.navigationController?.pushViewController(controller, animated: true)
             }
