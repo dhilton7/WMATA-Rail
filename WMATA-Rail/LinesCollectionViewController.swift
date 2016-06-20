@@ -9,12 +9,11 @@
 import UIKit
 import WMATASwift
 
-private let reuseIdentifier = "Cell"
-
 class LinesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
     private var lines: [Line]?
-    
+    private let reuseIdentifier = "lineCell"
+
     var selectedCellRow: Int?
 
     override func viewDidLoad() {
@@ -55,7 +54,7 @@ class LinesCollectionViewController: UICollectionViewController, UICollectionVie
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("lineCell", forIndexPath: indexPath) as! LineCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! LineCollectionViewCell
         cell.setupCell(Rail.sharedInstance.stringToColor(lines![indexPath.row].displayName))
         return cell
     }
