@@ -96,7 +96,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     // MARK: Location Manager Delegate
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
-        manager.stopUpdatingLocation()
+        if latestLocation == newLocation {
+            manager.stopUpdatingLocation()
+        }
         self.latestLocation = newLocation
     }
     
