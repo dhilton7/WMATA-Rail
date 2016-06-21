@@ -54,10 +54,22 @@ public class Helper {
         return linesView
     }
     
+    static func deleteFavoriteStationWithStation(station: Station) {
+        let result = Rail.sharedInstance.faveStations?.filter({ (obj:NSManagedObject) -> Bool in
+            obj.valueForKey("code") as! String == station.code!
+        })
+        if result?.first != nil {
+            deleteFavorite(result!.first!)
+        }
+    }
+    
     static func deleteFavoriteStation(row: Int) {
+        deleteFavorite(Rail.sharedInstance.faveStations![row])
+    }
+    
+    static private func deleteFavorite(obj: NSManagedObject) {
         let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        managedContext.deleteObject(Rail.sharedInstance.faveStations![row])
-        Rail.sharedInstance.faveStations!.removeAtIndex(row)
+        managedContext.deleteObject(obj)
         Rail.sharedInstance.saveStations(managedContext)
     }
 
