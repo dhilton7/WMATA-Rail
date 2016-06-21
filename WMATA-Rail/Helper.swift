@@ -12,10 +12,16 @@ import CoreData
 
 public class Helper {
     
+    /*
+        Checks is station is a favorite or not
+    */
     static func isFavorite(stationCode: String) -> Bool {
         return Rail.sharedInstance.faveStations?.contains({ $0.valueForKey("code") as! String == stationCode }) ?? false
     }
     
+    /*
+        Convert color string to UIColor
+    */
     static func stringToColor(color: String?) -> UIColor {
         if color == "Blue" || color == "BL" {
             return UIColor(red: 40/255.0, green: 99/255.0, blue: 178/255.0, alpha: 1.0)
@@ -39,7 +45,10 @@ public class Helper {
             return UIColor.whiteColor()
         }
     }
-        
+    
+    /*
+        Return view with colors of lines the station services
+    */
     static func getLinesView(station: Station) -> UIView {
         let linesView = UIView()
         var buffer: CGFloat = 4
@@ -58,6 +67,9 @@ public class Helper {
         return linesView
     }
     
+    /*
+        Helper function to iterate through line codes and add appropriate subviews
+    */
     static func iterateLineCodes(lineCodes: [String], linesView: UIView, buffer: CGFloat) -> CGFloat {
         var newBuffer = buffer
         for line in lineCodes {
@@ -67,6 +79,9 @@ public class Helper {
         return newBuffer
     }
     
+    /**
+        Helper to return single line color view
+    */
     private static func getlineSubview(buffer:CGFloat, line:String) -> UIView {
         let lineView = UIView(frame: CGRect(x: buffer, y: 8, width: Constants.lineCircleDiameter, height: Constants.lineCircleDiameter))
         lineView.layer.cornerRadius = Constants.lineCircleDiameter / 2
@@ -74,6 +89,9 @@ public class Helper {
         return lineView
     }
     
+    /*
+        Load all stops to Rail shared instance
+    */
     static func loadAllStops() {
         Rail.sharedInstance.wrapper.getStopsForLine(nil, success: { (stations:[Station]) in
             Rail.sharedInstance.railStops = stations
@@ -82,6 +100,9 @@ public class Helper {
         }
     }
     
+    /*
+        Delete a favorite given a station object
+    */
     static func deleteFavoriteStationWithStation(station: Station) {
         let result = Rail.sharedInstance.faveStations?.filter({ (obj:NSManagedObject) -> Bool in
             obj.valueForKey("code") as! String == station.code!
@@ -91,16 +112,25 @@ public class Helper {
         }
     }
     
+    /*
+        Delete a favorite given index of the favorite in the array
+    */
     static func deleteFavoriteStation(row: Int) {
         deleteFavorite(Rail.sharedInstance.faveStations![row])
     }
     
+    /*
+        Helper function to remove NSManagedObject
+    */
     static private func deleteFavorite(obj: NSManagedObject) {
         let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         managedContext.deleteObject(obj)
         saveStations(managedContext)
     }
     
+    /*
+        Fetch favorite stations from Core Data and saved to Rail shared instance
+    */
     static func getFavoriteStations() {
         let fetchStation = NSFetchRequest(entityName: Constants.stationEntity)
         do {
@@ -111,6 +141,9 @@ public class Helper {
         }
     }
     
+    /*
+        Save context for given NSManagedObjectContext
+    */
     static func saveStations(context: NSManagedObjectContext) {
         do {
             try context.save()
@@ -120,15 +153,13 @@ public class Helper {
         }
     }
     
+    /*
+        Find and return a Station object based on the station code
+    */
     static func findStation(code: String) -> Station? {
         if let i = Rail.sharedInstance.railStops?.indexOf({ $0.code == code}) {
             return Rail.sharedInstance.railStops![i]
         }
-        return nil
-    }
-    
-    static func getPaletteViewForStationCode(code: String) -> UIView? {
-        
         return nil
     }
 
