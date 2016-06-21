@@ -17,8 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        UITabBar.appearance().tintColor = UIColor(red: 200, green: 0, blue: 0, alpha: 1.0)
         UINavigationBar.appearance().barTintColor = UIColor(red: 100/255.0, green: 149/255.0, blue: 237/255.0, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor(red: 245/255.0, green: 246/255.0, blue: 247/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 17.0)!]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17.0)!], forState: .Normal)
+        
         
         Helper.getFavoriteStations()
         Helper.loadAllStops()
