@@ -34,13 +34,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     private func getStations() {
-        Rail.sharedInstance.wrapper.getStopsForLine(nil, success: { (stations:[Station]) in
-            self.stations = stations
-            dispatch_async(dispatch_get_main_queue(), { 
-                self.updateMapUI()
-            })
-        }) { (error:NSError) in
-                // TODO: Error Alert?
+        if Rail.sharedInstance.railStops != nil {
+            self.stations = Rail.sharedInstance.railStops
+            self.updateMapUI()
+        }
+        else {
+            Helper.loadAllStops()
         }
     }
     

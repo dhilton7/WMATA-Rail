@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(red: 100/255.0, green: 149/255.0, blue: 237/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor(red: 245/255.0, green: 246/255.0, blue: 247/255.0, alpha: 1.0)
         
-        Rail.sharedInstance.getFavoriteStations()
+        Helper.getFavoriteStations()
+        Helper.loadAllStops()
+        
         // Override point for customization after application launch.
         return true
     }

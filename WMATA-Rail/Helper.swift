@@ -54,6 +54,14 @@ public class Helper {
         return linesView
     }
     
+    static func loadAllStops() {
+        Rail.sharedInstance.wrapper.getStopsForLine(nil, success: { (stations:[Station]) in
+            Rail.sharedInstance.railStops = stations
+        }) { (error:NSError) in
+            // TODO: Handle Error
+        }
+    }
+    
     static func deleteFavoriteStationWithStation(station: Station) {
         let result = Rail.sharedInstance.faveStations?.filter({ (obj:NSManagedObject) -> Bool in
             obj.valueForKey("code") as! String == station.code!
@@ -70,7 +78,26 @@ public class Helper {
     static private func deleteFavorite(obj: NSManagedObject) {
         let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         managedContext.deleteObject(obj)
-        Rail.sharedInstance.saveStations(managedContext)
+        saveStations(managedContext)
+    }
+    
+    static func getFavoriteStations() {
+        let fetchStation = NSFetchRequest(entityName: Constants.stationEntity)
+        do {
+            let results = try (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext.executeFetchRequest(fetchStation)
+            Rail.sharedInstance.faveStations = results as? [NSManagedObject]
+        } catch let error {
+            debugPrint(error)
+        }
+    }
+    
+    static func saveStations(context: NSManagedObjectContext) {
+        do {
+            try context.save()
+            Helper.getFavoriteStations()
+        } catch let error {
+            debugPrint(error)
+        }
     }
 
 }
