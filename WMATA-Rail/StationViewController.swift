@@ -70,6 +70,17 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 35))
+        let label = UILabel(frame: CGRect(x: 16, y: 4, width: 0, height: 0))
+        label.text = "Upcoming Arrivals"
+        label.font = UIFont(name: "AvenirNext-Medium", size: 18.0)!
+        label.sizeToFit()
+        headerView.addSubview(label)
+        headerView.backgroundColor = UIColor(red: 230/255.0, green: 230/255.0, blue: 232/255.0, alpha: 1.0)
+        return headerView
+    }
+    
     private func addfavoriteStation() {
         let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
         let entity = NSEntityDescription.entityForName("Station", inManagedObjectContext: managedContext)
