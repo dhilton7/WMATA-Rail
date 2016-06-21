@@ -13,10 +13,12 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var lineCode: String?
-    private var stops: [Station]?
-    private var filteredStops: [Station]?
+    private var filteredStops: [RailPath]?
+    private var stops: [RailPath]?
     
+    var lineCode: String?
+    var startCode: String?
+    var endCode: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +29,26 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     private func getStops() {
-        Rail.sharedInstance.wrapper.getStopsForLine(self.lineCode, success: { (stations:[Station]) in
-            self.stops = stations
-            self.filteredStops = stations
-            dispatch_async(dispatch_get_main_queue(), {
+        
+        Rail.sharedInstance.wrapper.getPathBetweenStations(startCode!, toStationCode: endCode!, success: { (path:[RailPath]) in
+            self.stops = path
+            self.filteredStops = self.stops
+            dispatch_async(dispatch_get_main_queue(), { 
                 self.tableView.reloadData()
             })
         }) { (error:NSError) in
-            
+            // TODO: Handle Error
         }
+        
+//        Rail.sharedInstance.wrapper.getStopsForLine(self.lineCode, success: { (stations:[Station]) in
+//            self.stops = stations
+//            self.filteredStops = stations
+//            dispatch_async(dispatch_get_main_queue(), {
+//                self.tableView.reloadData()
+//            })
+//        }) { (error:NSError) in
+//            
+//        }
     }
 
     // MARK: - Table view data source
@@ -50,7 +63,7 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(Constants.stopCellReuseId, forIndexPath: indexPath) as! StopTableViewCell
-        cell.setupCell(self.filteredStops![indexPath.row])
+        cell.setupCell(Helper.findStation(filteredStops![indexPath.row].stationCode!)!)
         return cell
     }
     
@@ -61,8 +74,8 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     
     private func filterResults(searchText: String) {
         if stops != nil && !searchText.isEmpty {
-            filteredStops = self.stops!.filter({ (station:Station) -> Bool in
-                return station.name!.lowercaseString.containsString(searchText.lowercaseString)
+            filteredStops = self.stops!.filter({ (path:RailPath) -> Bool in
+                return path.stationName!.lowercaseString.containsString(searchText.lowercaseString)
             })
         }
         else {
@@ -116,8 +129,8 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let controller = segue.destinationViewController as? StationViewController {
             if let row = tableView.indexPathForSelectedRow?.row {
-                controller.station = stops![row]
-                controller.isFavorite = Helper.isFavorite(stops![row].code!)
+                controller.station = Helper.findStation(filteredStops![row].stationCode!)
+                controller.isFavorite = Helper.isFavorite(stops![row].stationCode!)
             }
         }
     }

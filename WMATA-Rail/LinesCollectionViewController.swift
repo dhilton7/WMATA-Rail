@@ -39,6 +39,8 @@ class LinesCollectionViewController: UICollectionViewController, UICollectionVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let controller = segue.destinationViewController as? StopsTableViewController {
             controller.lineCode = lines![selectedCellRow!].lineCode
+            controller.startCode = lines![selectedCellRow!].startStationCode
+            controller.endCode = lines![selectedCellRow!].endStationCode
         }
     }
 
