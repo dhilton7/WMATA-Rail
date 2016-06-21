@@ -15,21 +15,27 @@ class LinesCollectionViewController: UICollectionViewController, UICollectionVie
     private let reuseIdentifier = "lineCell"
 
     var selectedCellRow: Int?
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        getLines()
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if lines == nil {
+            getLines()
+        }
     }
 
     private func getLines() {
+        BaseViewController.showLoading(self.view)
         Rail.sharedInstance.wrapper.getTrainLines({ (lines:[Line]) in
             self.lines = lines
             dispatch_async(dispatch_get_main_queue(), {
                 self.collectionView?.reloadData()
             })
         }) { (error:NSError) in
-            
+            dispatch_async(dispatch_get_main_queue(), {
+                BaseViewController.hideLoading()
+                BaseViewController.showErrorAlert("Sorry could not get upcoming arrivals.", vc: self)
+            })
         }
     }
 

@@ -29,26 +29,20 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     private func getStops() {
-        
+        BaseViewController.showLoading(self.view)
         Rail.sharedInstance.wrapper.getPathBetweenStations(startCode!, toStationCode: endCode!, success: { (path:[RailPath]) in
             self.stops = path
             self.filteredStops = self.stops
-            dispatch_async(dispatch_get_main_queue(), { 
+            dispatch_async(dispatch_get_main_queue(), {
+                BaseViewController.hideLoading()
                 self.tableView.reloadData()
             })
         }) { (error:NSError) in
-            // TODO: Handle Error
+            dispatch_async(dispatch_get_main_queue(), {
+                BaseViewController.hideLoading()
+                BaseViewController.showErrorAlert("Sorry could not get upcoming arrivals.", vc: self)
+            })
         }
-        
-//        Rail.sharedInstance.wrapper.getStopsForLine(self.lineCode, success: { (stations:[Station]) in
-//            self.stops = stations
-//            self.filteredStops = stations
-//            dispatch_async(dispatch_get_main_queue(), {
-//                self.tableView.reloadData()
-//            })
-//        }) { (error:NSError) in
-//            
-//        }
     }
 
     // MARK: - Table view data source
