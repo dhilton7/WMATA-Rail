@@ -96,7 +96,7 @@ public class Helper {
         Rail.sharedInstance.wrapper.getStopsForLine(nil, success: { (stations:[Station]) in
             Rail.sharedInstance.railStops = stations
         }) { (error:NSError) in
-            // TODO: Handle Error
+            // TODO: Handle error
         }
     }
     

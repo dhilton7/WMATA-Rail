@@ -29,6 +29,7 @@ class LinesCollectionViewController: UICollectionViewController, UICollectionVie
         Rail.sharedInstance.wrapper.getTrainLines({ (lines:[Line]) in
             self.lines = lines
             dispatch_async(dispatch_get_main_queue(), {
+                BaseViewController.hideLoading()
                 self.collectionView?.reloadData()
             })
         }) { (error:NSError) in
