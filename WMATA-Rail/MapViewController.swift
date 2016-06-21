@@ -19,6 +19,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     private var stations: [Station]?
     private var latestLocation: CLLocation?
     private var manager: CLLocationManager?
+    private var stationAnnotations: [MetroAnnotation]?
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,16 +48,16 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         if latestLocation != nil {
             mapView.setRegion(MKCoordinateRegion(center: latestLocation!.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)), animated: false)
         }
-        if stations != nil {
-            var stationAnnotations = [MetroAnnotation]()
+        if stations != nil && stationAnnotations == nil {
+            stationAnnotations = [MetroAnnotation]()
             for s in stations! {
                 let annotation = MetroAnnotation()
                 annotation.coordinate = CLLocationCoordinate2D(latitude: s.latitude!, longitude: s.longitude!)
                 annotation.title = s.name
                 annotation.station = s
-                stationAnnotations.append(annotation)
+                stationAnnotations!.append(annotation)
             }
-            mapView.addAnnotations(stationAnnotations)
+            mapView.addAnnotations(stationAnnotations!)
         }
     }
     
