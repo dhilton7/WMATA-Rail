@@ -16,10 +16,11 @@ class StopTableViewCell: UITableViewCell {
     
     private var subviewLines: UIView?
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override func prepareForReuse() {
+        super.prepareForReuse()
         
+        subviewLines?.removeFromSuperview()
+        subviewLines = nil
     }
     
     func setupCell(station: Station) {
