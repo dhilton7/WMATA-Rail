@@ -65,8 +65,8 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("predictionCell")!
-        cell.textLabel?.text = "\(trains![indexPath.row].destinationName!)- \(trains![indexPath.row].minString())"
+        let cell = tableView.dequeueReusableCellWithIdentifier("predictionCell") as! PredictionTableViewCell
+        cell.setupCell(self.trains![indexPath.row])
         return cell
     }
     
