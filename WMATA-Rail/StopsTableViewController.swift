@@ -16,12 +16,14 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     var lineCode: String?
     private var stops: [Station]?
     private var filteredStops: [Station]?
+    
+    private let reuseId = "stopCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchBar.delegate = self
-        
+        tableView.registerNib(UINib(nibName: "StopTableViewCell", bundle: nil), forCellReuseIdentifier: reuseId)
         getStops()
     }
 
@@ -48,8 +50,8 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("stopCell", forIndexPath: indexPath)
-        cell.textLabel?.text = filteredStops![indexPath.row].name
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseId, forIndexPath: indexPath) as! StopTableViewCell
+        cell.setupCell(self.filteredStops![indexPath.row])
         return cell
     }
     
@@ -68,6 +70,10 @@ class StopsTableViewController: UITableViewController, UISearchBarDelegate {
             filteredStops = self.stops
         }
         tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("stationSegue", sender: nil)
     }
 
     /*

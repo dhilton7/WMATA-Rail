@@ -12,16 +12,27 @@ import CoreData
 
 class FavoriteTableViewController: UITableViewController {
     
-    private var favoriteStations: [NSManagedObject]?
+    private var favorites: [Station]?
+    
+    private let reuseId = "stopCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.registerNib(UINib(nibName: "StopTableViewCell", bundle: nil), forCellReuseIdentifier: reuseId)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.favoriteStations = Rail.sharedInstance.faveStations
+        if Rail.sharedInstance.faveStations != nil {
+            favorites = [Station]()
+            for s in Rail.sharedInstance.faveStations! {
+                let ns = Station()
+                ns.addAttributesFromManagedObj(s)
+                self.favorites!.append(ns)
+            }
+        }
         self.tableView.reloadData()
     }
 
@@ -32,32 +43,23 @@ class FavoriteTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteStations?.count ?? 0
+        return favorites?.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("faveCell", forIndexPath: indexPath)
-        if let name = favoriteStations?[indexPath.row].valueForKey("name") as? String {
-            cell.textLabel?.text = name
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier(reuseId, forIndexPath: indexPath) as! StopTableViewCell
+        cell.setupCell(favorites![indexPath.row])
         return cell
     }
     
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            self.deleteFavoriteStation(indexPath.row)
+            favorites?.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            Helper.deleteFavoriteStation(indexPath.row)
         }
     }
-    
-    private func deleteFavoriteStation(row: Int) {
-        let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        managedContext.deleteObject(favoriteStations![row])
-        favoriteStations!.removeAtIndex(row)
-        Rail.sharedInstance.saveStations(managedContext)
-    }
-
     
     // MARK: - Navigation
 

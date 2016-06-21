@@ -53,6 +53,14 @@ public class Helper {
         linesView.frame = CGRect(x: 0, y: 0, width: buffer, height: Constants.lineCircleDiameter + 16)
         return linesView
     }
+    
+    static func deleteFavoriteStation(row: Int) {
+        let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        managedContext.deleteObject(Rail.sharedInstance.faveStations![row])
+        Rail.sharedInstance.faveStations!.removeAtIndex(row)
+        Rail.sharedInstance.saveStations(managedContext)
+    }
+
 }
 
 public extension Station {
