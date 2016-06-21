@@ -39,34 +39,32 @@ public class Helper {
             return UIColor.whiteColor()
         }
     }
-    
-    // TOOD: Consolidate this code down
-    
+        
     static func getLinesView(station: Station) -> UIView {
         let linesView = UIView()
         var buffer: CGFloat = 4
-        for line in station.lineCodes! {
-            linesView.addSubview(getlineSubview(buffer, line: line))
-            buffer += Constants.lineCircleDiameter + 4
-        }
+        buffer = iterateLineCodes(station.lineCodes!, linesView: linesView, buffer: buffer)
         if let st1 = station.stationTogether1 {
             if let s = findStation(st1) {
-                for line in s.lineCodes! {
-                    linesView.addSubview(getlineSubview(buffer, line: line))
-                    buffer += Constants.lineCircleDiameter + 4
-                }
+                buffer = iterateLineCodes(s.lineCodes!, linesView: linesView, buffer: buffer)
             }
         }
         if let st2 = station.stationTogether2 {
             if let s = findStation(st2) {
-                for line in s.lineCodes! {
-                    linesView.addSubview(getlineSubview(buffer, line: line))
-                    buffer += Constants.lineCircleDiameter + 4
-                }
+                buffer = iterateLineCodes(s.lineCodes!, linesView: linesView, buffer: buffer)
             }
         }
         linesView.frame = CGRect(x: 0, y: 0, width: buffer, height: Constants.lineCircleDiameter + 16)
         return linesView
+    }
+    
+    static func iterateLineCodes(lineCodes: [String], linesView: UIView, buffer: CGFloat) -> CGFloat {
+        var newBuffer = buffer
+        for line in lineCodes {
+            linesView.addSubview(getlineSubview(newBuffer, line: line))
+            newBuffer += Constants.lineCircleDiameter + 4
+        }
+        return newBuffer
     }
     
     private static func getlineSubview(buffer:CGFloat, line:String) -> UIView {
