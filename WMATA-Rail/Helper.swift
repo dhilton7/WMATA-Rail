@@ -40,18 +40,40 @@ public class Helper {
         }
     }
     
+    // TOOD: Consolidate this code down
+    
     static func getLinesView(station: Station) -> UIView {
         let linesView = UIView()
         var buffer: CGFloat = 4
         for line in station.lineCodes! {
-            let lineView = UIView(frame: CGRect(x: buffer, y: 8, width: Constants.lineCircleDiameter, height: Constants.lineCircleDiameter))
-            lineView.layer.cornerRadius = Constants.lineCircleDiameter / 2
-            lineView.backgroundColor = stringToColor(line)
-            linesView.addSubview(lineView)
+            linesView.addSubview(getlineSubview(buffer, line: line))
             buffer += Constants.lineCircleDiameter + 4
+        }
+        if let st1 = station.stationTogether1 {
+            if let s = findStation(st1) {
+                for line in s.lineCodes! {
+                    linesView.addSubview(getlineSubview(buffer, line: line))
+                    buffer += Constants.lineCircleDiameter + 4
+                }
+            }
+        }
+        if let st2 = station.stationTogether2 {
+            if let s = findStation(st2) {
+                for line in s.lineCodes! {
+                    linesView.addSubview(getlineSubview(buffer, line: line))
+                    buffer += Constants.lineCircleDiameter + 4
+                }
+            }
         }
         linesView.frame = CGRect(x: 0, y: 0, width: buffer, height: Constants.lineCircleDiameter + 16)
         return linesView
+    }
+    
+    private static func getlineSubview(buffer:CGFloat, line:String) -> UIView {
+        let lineView = UIView(frame: CGRect(x: buffer, y: 8, width: Constants.lineCircleDiameter, height: Constants.lineCircleDiameter))
+        lineView.layer.cornerRadius = Constants.lineCircleDiameter / 2
+        lineView.backgroundColor = stringToColor(line)
+        return lineView
     }
     
     static func loadAllStops() {
@@ -98,6 +120,18 @@ public class Helper {
         } catch let error {
             debugPrint(error)
         }
+    }
+    
+    static func findStation(code: String) -> Station? {
+        if let i = Rail.sharedInstance.railStops?.indexOf({ $0.code == code}) {
+            return Rail.sharedInstance.railStops![i]
+        }
+        return nil
+    }
+    
+    static func getPaletteViewForStationCode(code: String) -> UIView? {
+        
+        return nil
     }
 
 }
