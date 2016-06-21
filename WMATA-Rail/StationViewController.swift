@@ -79,6 +79,10 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         station.setValue(self.station?.name, forKey: "name")
         station.setValue(self.station?.longitude, forKey: "longitude")
         station.setValue(self.station?.latitude, forKey: "latitude")
+        station.setValue(self.station?.streetAddress, forKey: "streetAddress")
+        station.setValue(self.station?.city, forKey: "city")
+        station.setValue(self.station?.state, forKey: "state")
+        station.setValue(self.station?.zip, forKey: "zip")
         for (i, lineCode) in self.station!.lineCodes!.enumerate() {
             station.setValue(lineCode, forKey:"lineCode\(i+1)")
         }

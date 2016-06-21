@@ -70,13 +70,17 @@ public extension Station {
         latitude = stop.valueForKey("latitude") as? Double
         longitude = stop.valueForKey("longitude") as? Double
         name = stop.valueForKey("name") as? String
+        streetAddress = stop.valueForKey("streetAddress") as? String
+        city = stop.valueForKey("city") as? String
+        state = stop.valueForKey("state") as? String
+        zip = stop.valueForKey("zip") as? String
         lineCodes = [String]()
         for i in 1...4 {
             if let lc = stop.valueForKey("lineCode\(i)") as? String {
                 lineCodes?.append(lc)
             }
         }
-        
+
     }
     
 }
