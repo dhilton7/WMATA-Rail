@@ -60,12 +60,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-KE-OoS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="35" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-KE-OoS">
                                 <rect key="frame" x="0.0" y="149" width="600" height="402"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="predictionCell" id="pev-0K-6bF">
-                                        <rect key="frame" x="0.0" y="65" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pev-0K-6bF" id="Vog-55-0G2">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -238,6 +238,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="S2c-We-sud">
                         <barButtonItem key="backBarButtonItem" title=" " id="7gK-zT-axP"/>
+                        <barButtonItem key="rightBarButtonItem" image="LocationIcon" id="7cq-f8-je2">
+                            <color key="tintColor" red="0.92336933720000003" green="0.90965813760000003" blue="0.90908137580000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="updateLocationTapped:" destination="deU-xc-uBG" id="gHN-br-hCj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="qGo-Bk-eR2" id="3PY-uz-YVT"/>
@@ -333,6 +339,7 @@
     </scenes>
     <resources>
         <image name="LinesIcon" width="25" height="25"/>
+        <image name="LocationIcon" width="25" height="25"/>
         <image name="MapIcon" width="25" height="25"/>
         <image name="StarIcon" width="25" height="25"/>
     </resources>
