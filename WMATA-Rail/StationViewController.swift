@@ -49,15 +49,28 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     private func getPrediction() {
-        
-        Rail.sharedInstance.wrapper.getNextTrain(station?.code, success: { (trains:[Train]) in
+        var codes = "\(station!.code!)"
+        if !(station?.stationTogether1 ?? "").isEmpty {
+            codes = codes.stringByAppendingString(",\(station!.stationTogether1!)")
+        }
+        if !(station?.stationTogether2 ?? "").isEmpty {
+            codes = codes.stringByAppendingString(",\(station!.stationTogether2!)")
+        }
+        Rail.sharedInstance.wrapper.getNextTrain(codes, success: { (trains:[Train]) in
             self.trains = trains
+            self.filterUnknownTrains()
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
             })
         }) { (error:NSError) in
             
         }
+    }
+    
+    private func filterUnknownTrains() {
+        self.trains = trains?.filter({ (train:Train) -> Bool in
+            !(train.min?.lowercaseString == "unknown" || train.min?.lowercaseString == "empty" || train.destinationName?.lowercaseString == "train" )
+        })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
