@@ -29,6 +29,7 @@
 		9BE0A5DA1D18B57A0082E344 /* StopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE0A5D81D18B57A0082E344 /* StopTableViewCell.swift */; };
 		9BE0A5DB1D18B57A0082E344 /* StopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9BE0A5D91D18B57A0082E344 /* StopTableViewCell.xib */; };
 		9BE0A5DE1D18D3970082E344 /* PredictionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE0A5DD1D18D3970082E344 /* PredictionTableViewCell.swift */; };
+		9BE128F81D19F459008A7C36 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE128F71D19F459008A7C36 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		9BE0A5D81D18B57A0082E344 /* StopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTableViewCell.swift; sourceTree = "<group>"; };
 		9BE0A5D91D18B57A0082E344 /* StopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopTableViewCell.xib; sourceTree = "<group>"; };
 		9BE0A5DD1D18D3970082E344 /* PredictionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PredictionTableViewCell.swift; sourceTree = "<group>"; };
+		9BE128F71D19F459008A7C36 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				9BC2DB171D1222F200D8DEF0 /* StationViewController.swift */,
 				9BDF26D71D17510500BEE020 /* MapViewController.swift */,
 				9B6676FC1D1831BA0039491A /* FavoriteTableViewController.swift */,
+				9BE128F71D19F459008A7C36 /* BaseViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				9BC2DAF61D11DB2300D8DEF0 /* Rail.swift in Sources */,
 				9BA393461D11D63200AE3ED9 /* AppDelegate.swift in Sources */,
 				9BE0A5DE1D18D3970082E344 /* PredictionTableViewCell.swift in Sources */,
+				9BE128F81D19F459008A7C36 /* BaseViewController.swift in Sources */,
 				9BE0A5DA1D18B57A0082E344 /* StopTableViewCell.swift in Sources */,
 				9BDF26DF1D17597A00BEE020 /* MetroAnnotation.swift in Sources */,
 				9B09BF491D124A310092D393 /* LineCollectionViewCell.swift in Sources */,

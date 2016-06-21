@@ -10,7 +10,7 @@ import UIKit
 import WMATASwift
 import CoreData
 
-class StationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StationViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -33,10 +33,11 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         self.addFaveButton = UIBarButtonItem(image: UIImage(named: "FavoriteEmpty.png"), style: .Plain, target: self, action: "toggleFavorite:")
         self.removeFaveButton = UIBarButtonItem(image: UIImage(named: "FavoriteFilled.png"), style: .Plain, target: self, action: "toggleFavorite:")
-
+        
         let btn = isFavorite! == true ? removeFaveButton : addFaveButton
         navigationItem.setRightBarButtonItem(btn, animated: false)
         
+        self.showLoading()
         getPrediction()
     }
     
@@ -61,9 +62,13 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.filterUnknownTrains()
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
+                self.hideLoading()
             })
         }) { (error:NSError) in
-            
+            dispatch_async(dispatch_get_main_queue(), {
+                self.hideLoading()
+                self.showErrorAlert("Sorry could not get upcoming arrivals.")
+            })
         }
     }
     
