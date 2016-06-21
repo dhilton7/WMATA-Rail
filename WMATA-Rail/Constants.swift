@@ -15,5 +15,7 @@ struct Constants {
     static let LatDC = 38.9072
     static let stationEntity = "Station"
     static let lineCircleDiameter: CGFloat = 30
+    static let stopCellReuseId = "stopCell"
+    static let stationSegue = "stationSegue"
     
 }

@@ -14,12 +14,11 @@ class FavoriteTableViewController: UITableViewController {
     
     private var favorites: [Station]?
     
-    private let reuseId = "stopCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerNib(UINib(nibName: "StopTableViewCell", bundle: nil), forCellReuseIdentifier: reuseId)
+        tableView.registerNib(UINib(nibName: "StopTableViewCell", bundle: nil), forCellReuseIdentifier: Constants.stopCellReuseId)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -47,9 +46,13 @@ class FavoriteTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseId, forIndexPath: indexPath) as! StopTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.stopCellReuseId, forIndexPath: indexPath) as! StopTableViewCell
         cell.setupCell(favorites![indexPath.row])
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier(Constants.stationSegue, sender: indexPath.row)
     }
     
     // Override to support editing the table view.
