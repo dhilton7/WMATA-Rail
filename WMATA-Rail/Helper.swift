@@ -142,6 +142,36 @@ public class Helper {
     }
     
     /*
+        Add station to favorites list and save in Core Data
+    */
+    static func addfavoriteStation(station: Station) {
+        let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+        let entity = NSEntityDescription.entityForName("Station", inManagedObjectContext: managedContext)
+        let stop = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        stop.setValue(station.code, forKey: "code")
+        stop.setValue(station.name, forKey: "name")
+        stop.setValue(station.longitude, forKey: "longitude")
+        stop.setValue(station.latitude, forKey: "latitude")
+        stop.setValue(station.streetAddress, forKey: "streetAddress")
+        stop.setValue(station.city, forKey: "city")
+        stop.setValue(station.state, forKey: "state")
+        stop.setValue(station.zip, forKey: "zip")
+        stop.setValue(station.stationTogether1, forKey: "stationTogether1")
+        stop.setValue(station.stationTogether2, forKey: "stationTogether2")
+        for (i, lineCode) in station.lineCodes!.enumerate() {
+            stop.setValue(lineCode, forKey:"lineCode\(i+1)")
+        }
+        
+        do {
+            try managedContext.save()
+            Rail.sharedInstance.faveStations?.append(stop)
+        } catch let error {
+            debugPrint(error)
+        }
+    }
+    
+    /*
         Save context for given NSManagedObjectContext
     */
     static func saveStations(context: NSManagedObjectContext) {
@@ -176,6 +206,8 @@ public extension Station {
         city = stop.valueForKey("city") as? String
         state = stop.valueForKey("state") as? String
         zip = stop.valueForKey("zip") as? String
+        stationTogether1 = stop.valueForKey("stationTogether1") as? String
+        stationTogether2 = stop.valueForKey("stationTogether2") as? String
         lineCodes = [String]()
         for i in 1...4 {
             if let lc = stop.valueForKey("lineCode\(i)") as? String {

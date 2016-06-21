@@ -11,10 +11,12 @@
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stationTogether1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stationTogether2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="streetAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Station" positionX="-63" positionY="-18" width="128" height="225"/>
+        <element name="Station" positionX="-63" positionY="-18" width="128" height="255"/>
     </elements>
 </model>

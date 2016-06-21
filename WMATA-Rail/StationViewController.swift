@@ -81,35 +81,11 @@ class StationViewController: UIViewController, UITableViewDelegate, UITableViewD
         return headerView
     }
     
-    private func addfavoriteStation() {
-        let managedContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-        let entity = NSEntityDescription.entityForName("Station", inManagedObjectContext: managedContext)
-        let station = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        
-        station.setValue(self.station?.code, forKey: "code")
-        station.setValue(self.station?.name, forKey: "name")
-        station.setValue(self.station?.longitude, forKey: "longitude")
-        station.setValue(self.station?.latitude, forKey: "latitude")
-        station.setValue(self.station?.streetAddress, forKey: "streetAddress")
-        station.setValue(self.station?.city, forKey: "city")
-        station.setValue(self.station?.state, forKey: "state")
-        station.setValue(self.station?.zip, forKey: "zip")
-        for (i, lineCode) in self.station!.lineCodes!.enumerate() {
-            station.setValue(lineCode, forKey:"lineCode\(i+1)")
-        }
-        
-        do {
-            try managedContext.save()
-            Rail.sharedInstance.faveStations?.append(station)
-        } catch let error {
-            debugPrint(error)
-        }
-    }
     
     @IBAction func toggleFavorite(sender: AnyObject) {
         let fave = isFavorite ?? false
         if fave == false {
-            self.addfavoriteStation()
+            Helper.addfavoriteStation(self.station!)
         }
         else {
             Helper.deleteFavoriteStationWithStation(self.station!)
