@@ -18,7 +18,9 @@ class FavoriteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         tableView.registerNib(UINib(nibName: "StopTableViewCell", bundle: nil), forCellReuseIdentifier: Constants.stopCellReuseId)
+        tableView.tableFooterView = UIView()
     }
 
     override func viewWillAppear(animated: Bool) {
