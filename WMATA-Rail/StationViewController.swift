@@ -17,9 +17,15 @@ class StationViewController: BaseViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var linesView: UIView!
     
     private var trains: [Train]?
-    
     private var addFaveButton: UIBarButtonItem!
     private var removeFaveButton: UIBarButtonItem!
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refreshTable:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        return refreshControl
+    }()
     
     var station: Station?
     var isFavorite: Bool?
@@ -37,7 +43,8 @@ class StationViewController: BaseViewController, UITableViewDelegate, UITableVie
         let btn = isFavorite! == true ? removeFaveButton : addFaveButton
         navigationItem.setRightBarButtonItem(btn, animated: false)
         
-        self.showLoading()
+        self.tableView.addSubview(refreshControl)
+        
         getPrediction()
     }
     
@@ -62,12 +69,12 @@ class StationViewController: BaseViewController, UITableViewDelegate, UITableVie
             self.filterUnknownTrains()
             dispatch_async(dispatch_get_main_queue(), {
                 self.tableView.reloadData()
-                self.hideLoading()
+                self.refreshControl.endRefreshing()
             })
         }) { (error:NSError) in
             dispatch_async(dispatch_get_main_queue(), {
-                self.hideLoading()
                 self.showErrorAlert("Sorry could not get upcoming arrivals.")
+                self.refreshControl.endRefreshing()
             })
         }
     }
@@ -99,6 +106,9 @@ class StationViewController: BaseViewController, UITableViewDelegate, UITableVie
         return headerView
     }
     
+    func refreshTable(sender: AnyObject) {
+        getPrediction()
+    }
     
     @IBAction func toggleFavorite(sender: AnyObject) {
         let fave = isFavorite ?? false
