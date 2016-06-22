@@ -11,12 +11,15 @@ import WMATASwift
 import MapKit
 import CoreLocation
 
-class MapViewController: BaseViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: BaseViewController, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
     
     private var stations: [Station]?
+    private var filteredStations: [Station]?
     private var latestLocation: CLLocation?
     private var manager: CLLocationManager?
     private var stationAnnotations: [MetroAnnotation]?
@@ -30,6 +33,10 @@ class MapViewController: BaseViewController, MKMapViewDelegate, CLLocationManage
         
         mapView.delegate = self
         mapView.showsUserLocation = true
+        
+        searchBar.delegate = self
+        
+        self.tableView.hidden = true
 
         getStations()
     }
@@ -109,6 +116,34 @@ class MapViewController: BaseViewController, MKMapViewDelegate, CLLocationManage
         }
     }
 
+    // MARK: Search Bar Delegate
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        filterStops(searchText)
+    }
+    
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        // Begun editing show the table view
+        self.tableView.hidden = false
+    }
+    
+    private func filterStops(searchText: String) {
+        filteredStations = stations!.filter({ (station:Station) -> Bool in
+            station.name!.lowercaseString.containsString(searchText.lowercaseString)
+        })
+    }
+    
+    // MARK: Table view data source
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return filteredStations?.count ?? 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.stopCellReuseId) as! StopTableViewCell
+        cell.setupCell(filteredStations![indexPath.row])
+        return cell
+    }
+    
+    // MARK: Table
     
     @IBAction func updateLocationTapped(sender: AnyObject) {
         latestLocation = nil

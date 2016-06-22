@@ -261,16 +261,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="qGo-Bk-eR2">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                             </mapView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Pre-c2-cut">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="91" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mPA-hb-kfA">
+                                <rect key="frame" x="0.0" y="108" width="600" height="443"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="stopCell" id="F0q-U9-SJo" customClass="StopTableViewCell" customModule="WMATA_Rail" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="91"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F0q-U9-SJo" id="sxO-0H-iIU">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="90.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="deU-xc-uBG" id="e2f-Oi-18v"/>
+                                    <outlet property="delegate" destination="deU-xc-uBG" id="HXz-cD-2ns"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qGo-Bk-eR2" firstAttribute="leading" secondItem="jXN-jh-WxG" secondAttribute="leading" id="3fs-Bs-ojx"/>
+                            <constraint firstAttribute="trailing" secondItem="mPA-hb-kfA" secondAttribute="trailing" id="5YW-aL-9Ba"/>
+                            <constraint firstItem="mPA-hb-kfA" firstAttribute="top" secondItem="Pre-c2-cut" secondAttribute="bottom" id="AwX-Gy-0Wi"/>
+                            <constraint firstItem="kXf-Np-NcB" firstAttribute="top" secondItem="mPA-hb-kfA" secondAttribute="bottom" id="E3M-Sw-c53"/>
                             <constraint firstItem="kXf-Np-NcB" firstAttribute="top" secondItem="qGo-Bk-eR2" secondAttribute="bottom" id="Eub-AU-S84"/>
+                            <constraint firstItem="Pre-c2-cut" firstAttribute="top" secondItem="ZrC-eQ-UTB" secondAttribute="bottom" id="VxS-dX-a3Q"/>
+                            <constraint firstItem="qGo-Bk-eR2" firstAttribute="top" secondItem="Pre-c2-cut" secondAttribute="bottom" id="ZfV-GK-yty"/>
+                            <constraint firstAttribute="trailing" secondItem="Pre-c2-cut" secondAttribute="trailing" id="cEb-ff-hap"/>
                             <constraint firstItem="qGo-Bk-eR2" firstAttribute="top" secondItem="ZrC-eQ-UTB" secondAttribute="bottom" id="oK2-BP-06i"/>
+                            <constraint firstItem="mPA-hb-kfA" firstAttribute="leading" secondItem="jXN-jh-WxG" secondAttribute="leading" id="qTo-zR-UBd"/>
+                            <constraint firstItem="Pre-c2-cut" firstAttribute="leading" secondItem="jXN-jh-WxG" secondAttribute="leading" id="rfH-Xm-egy"/>
                             <constraint firstAttribute="trailing" secondItem="qGo-Bk-eR2" secondAttribute="trailing" id="wkb-XG-e6A"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oK2-BP-06i"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="S2c-We-sud">
                         <barButtonItem key="backBarButtonItem" title=" " id="7gK-zT-axP"/>
@@ -283,6 +318,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="qGo-Bk-eR2" id="3PY-uz-YVT"/>
+                        <outlet property="searchBar" destination="Pre-c2-cut" id="lUc-vO-sHF"/>
+                        <outlet property="tableView" destination="mPA-hb-kfA" id="Jt8-n6-YVE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sZ9-82-hZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
