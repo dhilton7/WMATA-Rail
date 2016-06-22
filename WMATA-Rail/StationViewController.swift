@@ -74,7 +74,7 @@ class StationViewController: BaseViewController, UITableViewDelegate, UITableVie
     
     private func filterUnknownTrains() {
         self.trains = trains?.filter({ (train:Train) -> Bool in
-            !(train.min?.lowercaseString == "unknown" || train.min?.lowercaseString == "empty" || train.destinationName?.lowercaseString == "train" )
+            return !(train.min?.lowercaseString == "unknown" || (train.min?.lowercaseString.isEmpty ?? true) || train.destinationName?.lowercaseString == "train" || train.destinationName?.lowercaseString == "no passenger" )
         })
     }
     

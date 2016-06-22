@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		9B09BF471D124A1A0092D393 /* LinesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09BF461D124A1A0092D393 /* LinesCollectionViewController.swift */; };
 		9B09BF491D124A310092D393 /* LineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B09BF481D124A310092D393 /* LineCollectionViewCell.swift */; };
-		9B0CA79C1D199F16008F8390 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0CA79B1D199F16008F8390 /* WMATASwift.framework */; };
-		9B0CA79D1D199F19008F8390 /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0CA79B1D199F16008F8390 /* WMATASwift.framework */; };
-		9B0CA79E1D199F19008F8390 /* WMATASwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9B0CA79B1D199F16008F8390 /* WMATASwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9B6676FB1D1828530039491A /* WMATA_Rail.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B6676F91D1828530039491A /* WMATA_Rail.xcdatamodeld */; };
 		9B6676FD1D1831BA0039491A /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B6676FC1D1831BA0039491A /* FavoriteTableViewController.swift */; };
+		9BA0118E1D1A196B00EF3A0C /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0118D1D1A196B00EF3A0C /* WMATASwift.framework */; };
+		9BA0118F1D1A196E00EF3A0C /* WMATASwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0118D1D1A196B00EF3A0C /* WMATASwift.framework */; };
+		9BA011901D1A196E00EF3A0C /* WMATASwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9BA0118D1D1A196B00EF3A0C /* WMATASwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9BA393461D11D63200AE3ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA393451D11D63200AE3ED9 /* AppDelegate.swift */; };
 		9BA3934B1D11D63200AE3ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BA393491D11D63200AE3ED9 /* Main.storyboard */; };
 		9BA3934D1D11D63200AE3ED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BA3934C1D11D63200AE3ED9 /* Assets.xcassets */; };
@@ -49,7 +49,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9B0CA79E1D199F19008F8390 /* WMATASwift.framework in Embed Frameworks */,
+				9BA011901D1A196E00EF3A0C /* WMATASwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,9 +59,9 @@
 /* Begin PBXFileReference section */
 		9B09BF461D124A1A0092D393 /* LinesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinesCollectionViewController.swift; sourceTree = "<group>"; };
 		9B09BF481D124A310092D393 /* LineCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineCollectionViewCell.swift; sourceTree = "<group>"; };
-		9B0CA79B1D199F16008F8390 /* WMATASwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMATASwift.framework; sourceTree = "<group>"; };
 		9B6676FA1D1828530039491A /* WMATA_Rail.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WMATA_Rail.xcdatamodel; sourceTree = "<group>"; };
 		9B6676FC1D1831BA0039491A /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		9BA0118D1D1A196B00EF3A0C /* WMATASwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WMATASwift.framework; sourceTree = "<group>"; };
 		9BA393421D11D63200AE3ED9 /* WMATA-Rail.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WMATA-Rail.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BA393451D11D63200AE3ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BA3934A1D11D63200AE3ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -89,8 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B0CA79C1D199F16008F8390 /* WMATASwift.framework in Frameworks */,
-				9B0CA79D1D199F19008F8390 /* WMATASwift.framework in Frameworks */,
+				9BA0118E1D1A196B00EF3A0C /* WMATASwift.framework in Frameworks */,
+				9BA0118F1D1A196E00EF3A0C /* WMATASwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +110,7 @@
 				9BA393441D11D63200AE3ED9 /* WMATA-Rail */,
 				9BA393591D11D63200AE3ED9 /* WMATA-RailTests */,
 				9BA393431D11D63200AE3ED9 /* Products */,
-				9B0CA79B1D199F16008F8390 /* WMATASwift.framework */,
+				9BA0118D1D1A196B00EF3A0C /* WMATASwift.framework */,
 			);
 			sourceTree = "<group>";
 		};
