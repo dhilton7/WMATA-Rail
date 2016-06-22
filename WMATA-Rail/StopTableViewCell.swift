@@ -25,6 +25,7 @@ class StopTableViewCell: UITableViewCell {
     
     func setupCell(station: Station) {
         nameLabel.text = station.name
+        nameLabel.adjustsFontSizeToFitWidth = true
         subviewLines = Helper.getLinesView(station)
         subviewLines!.frame = CGRect(x: 4, y: 0, width: subviewLines!.frame.width, height: subviewLines!.frame.height)
         linesView.addSubview(subviewLines!)
